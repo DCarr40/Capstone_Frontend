@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-
+import { connect } from "react-redux";
+import { createEvent } from "../../store/actions/eventActions";
 
 //form to create events
-const CreateEvent = () => {
+const CreateEvent = (props) => {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(title, details);
+    props.createEvent(state);
   };
 
   return (
@@ -40,4 +42,10 @@ const CreateEvent = () => {
   );
 };
 
-export default CreateEvent;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createEvent: (event) => dispatch(createEvent(event)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(CreateEvent);

@@ -7,7 +7,7 @@ import { createStore, applyMiddleware } from "redux"; //applyMiddleware document
 import rootReducer from "./store/reducers/rootReducer";
 import thunk from "redux-thunk"; // will use thunk as middleware. I will basically pause the action creator to do an async func.
 
-const store = createStore(rootReducer); //root reducer congregates all actions to the store.
+const store = createStore(rootReducer, applyMiddleware(thunk)); //root reducer congregates all actions to the store.
 //Then we pass store to Provider to surround App and use when needed
 ReactDOM.render(
   <React.StrictMode>

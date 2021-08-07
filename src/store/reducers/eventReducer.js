@@ -8,6 +8,10 @@ const initState = {
 
 //Reducer for all events for my app
 const eventReducer = (state = initState, action) => {
+  switch (action.type) {
+      case 'CREATE_EVENT':
+        console.log('created project', action.event)
+  }
   return state;
 };
 
