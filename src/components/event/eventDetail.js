@@ -1,5 +1,6 @@
 import React from "react";
 
+//This is the specific details for the event
 const EventDetails = (props) => {
   const id = props.match.params.id;
   return (

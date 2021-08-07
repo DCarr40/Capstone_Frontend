@@ -1,6 +1,7 @@
 import React from "react";
 
 //This is the template of the individual event card
+//It is a brief summary of the creation of the event
 //It will be placed in the event list with multiple events
 const EventSummary = ({ event }) => {
   return (
