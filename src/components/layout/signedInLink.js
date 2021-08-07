@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+//Sign in link for navbar
 const SignedInLink = () => {
   return (
     <ul className="right">
@@ -11,7 +12,10 @@ const SignedInLink = () => {
         <NavLink to="/">Log Out</NavLink>
       </li>
       <li>
-        <NavLink to="/" className="btn btn-floating black lighten-1 waves-effect waves-light">
+        <NavLink
+          to="/"
+          className="btn btn-floating black lighten-1 waves-effect waves-light"
+        >
           DC
         </NavLink>
       </li>
