@@ -1,6 +1,6 @@
 import React from "react";
 import Notifications from "./notification";
-import EventList from "../event/eventList";
+import EventList from "../Event/eventList";
 import { connect } from "react-redux";
 
 const Dashboard = (props) => {
