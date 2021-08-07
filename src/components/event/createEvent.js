@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+
+//form to create events
 const CreateEvent = () => {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
