@@ -7,7 +7,7 @@ import { createStore } from "redux";
 import rootReducer from "./store/reducers/rootReducer";
 
 const store = createStore(rootReducer); //root reducer congregates all actions to the store.
-
+//Then we pass store to Provider to surround App and use when needed
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

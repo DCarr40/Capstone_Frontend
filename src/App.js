@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Dashboard from "./components/dashboard/dashboard";
+import Dashboard from "./components/DashBoard/dashboard";
 import NavBar from "./components/NavBar/navbar";
 import EventDetails from "./components/Event/eventDetail";
 import Signin from "./components/auth/signin";
