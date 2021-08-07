@@ -6,6 +6,7 @@ const initState = {
   ],
 };
 
+//Reducer for all events for my app
 const eventReducer = (state = initState, action) => {
   return state;
 };
