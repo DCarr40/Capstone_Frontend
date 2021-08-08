@@ -10,6 +10,8 @@ const NavBar = () => {
         <NavLink to="/" className="brand-logo hoverable">
           Runner's Inertia
         </NavLink>
+        </div>
+        <div className="navbar-wrapper black">
         <SignedInLink />
         <SignedOutLink />
       </div>
