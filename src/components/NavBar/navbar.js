@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SignedInLink from "./signedInLink";
 import SignedOutLink from "./signedOutLink";
 
@@ -7,9 +7,9 @@ const NavBar = () => {
   return (
     <nav className="navbar-wrapper red darken-2">
       <div className="container">
-        <Link to="/" className="brand-logo hoverable">
-          <div>Runner's Inertia</div>
-        </Link>
+        <NavLink to="/" className="brand-logo hoverable">
+          Runner's Inertia
+        </NavLink>
         <SignedInLink />
         <SignedOutLink />
       </div>

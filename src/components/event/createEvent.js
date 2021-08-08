@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { createEvent } from "../../store/actions/eventActions";
+import { createEvents } from "../../store/actions/eventActions";
 
 //form to create events
 const CreateEvent = (props) => {
@@ -10,7 +10,8 @@ const CreateEvent = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(title, details);
-    props.createEvent(state);
+    //I may have messed up with state at this point
+    props.createEvent({ title, details });
   };
 
   return (
@@ -44,7 +45,7 @@ const CreateEvent = (props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createEvent: (event) => dispatch(createEvent(event)),
+    createEvent: (event) => dispatch(createEvents(event)),
   };
 };
 
