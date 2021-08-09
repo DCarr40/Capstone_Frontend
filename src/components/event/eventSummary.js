@@ -6,7 +6,7 @@ import React from "react";
 const EventSummary = ({ event }) => {
   return (
     <div>
-      <div className="card z-depth-1 event-summary  red darken-2 hoverable">
+      <div className="card z-depth-1 event-summary rcorners fadeaway hoverable">
         <div className="card-content ">
           <span className="card-title ">{event.title}</span>
           <p>Posted by David</p>

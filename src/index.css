@@ -22,22 +22,27 @@ code {
     monospace;
 }
 
-form{
+form {
   padding: 20px;
   margin-top: 60px;
 }
 
-form button, form h5{
+form button,
+form h5 {
   margin: 20px 0;
 }
 
-input[type=text]:not(.browser-default):focus:not([readonly]),
-input[type=email]:not(.browser-default):focus:not([readonly]),
-input[type=password]:not(.browser-default):focus:not([readonly]),
-textarea.materialize-textarea:focus:not([readonly]){
-border-color: black;
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-color: black;
 }
 
+.fadeaway {
+  background-image: linear-gradient(to right, rgb(240, 18, 18), rgb(141, 4, 4));
+}
 
-
-
+#rcorners {
+  border-radius: 50px;
+}

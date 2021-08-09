@@ -5,13 +5,11 @@ import SignedOutLink from "./signedOutLink";
 
 const NavBar = () => {
   return (
-    <nav className="navbar-wrapper red darken-2">
+    <nav className="navbar-wrapper fadeaway">
       <div className="container">
         <NavLink to="/" className="brand-logo hoverable">
           Runner's Inertia
         </NavLink>
-        </div>
-        <div className="navbar-wrapper black">
         <SignedInLink />
         <SignedOutLink />
       </div>
