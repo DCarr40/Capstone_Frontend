@@ -44,5 +44,10 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 #rcorners {
-  border-radius: 50px;
+  border-radius: 100px;
+}
+
+
+.opacity {
+  opacity: 25%;
 }

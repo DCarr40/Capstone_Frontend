@@ -11,13 +11,13 @@ const Dashboard = (props) => {
   //Then I just made them dynamically defined on the event list
   const { events } = props;
   return (
-    <div className="dashboard container">
+    <div className="dashboard rcorners container">
       <div className="row">
-      {/* <div className="col s10 m6">
+      <div className="col s7">
           <Time/>
-        </div> */}
+        </div>
         <div className="col s10 m6">
-          <div><Time/></div>
+          {/* <div><Time/></div> */}
           <EventList events={events} />
         </div>
         <div className="col s10 m5 offset-m1">
