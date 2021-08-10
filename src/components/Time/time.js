@@ -50,11 +50,11 @@ const [dateEl, setDateEl] = useState('');
 
   return (
     <div>
-      <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1 opacity">
-        <div class="card-content white-text">
-          <span class="card-title">{timeEl}</span>
+      <div className="row">
+    <div className="col s12 m6">
+      <div className="card blue-grey darken-1 opacity">
+        <div className="card-content white-text">
+          <span className="card-title">{timeEl}</span>
           <p>{dateEl}</p>
         </div>
       </div>
