@@ -4,7 +4,7 @@ import React from "react";
 const Notifications = () => {
   return (
     <div>
-      <p className="black-text material-icons">notifications</p>
+      <p className="red-text  darken-2 material-icons">notifications</p>
     </div>
   );
 };

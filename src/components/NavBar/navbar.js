@@ -6,8 +6,8 @@ import SignedOutLink from "./signedOutLink";
 const NavBar = () => {
   return (
     <nav className="navbar-wrapper fadeaway">
-      <div className="container">
-        <NavLink to="/" className="brand-logo hoverable">
+      <div className="">
+        <NavLink to="/">
           Runner's Inertia
         </NavLink>
         <SignedInLink />

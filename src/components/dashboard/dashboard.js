@@ -2,19 +2,23 @@ import React from "react";
 import Notifications from "./notification";
 import EventList from "../Event/eventList";
 import { connect } from "react-redux";
+import Time from "../Time/time";
 
 const Dashboard = (props) => {
-
   // console.log(props);
   //So anything imported into a functional component has its props flowing through it.
   // Adding props to Dashboard allowed me to console log it and see the events
   //Then I just made them dynamically defined on the event list
-const {events} = props;
+  const { events } = props;
   return (
     <div className="dashboard container">
       <div className="row">
+      {/* <div className="col s10 m6">
+          <Time/>
+        </div> */}
         <div className="col s10 m6">
-          <EventList events ={events}/>
+          <div><Time/></div>
+          <EventList events={events} />
         </div>
         <div className="col s10 m5 offset-m1">
           <Notifications />
