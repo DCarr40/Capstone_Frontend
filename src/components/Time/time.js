@@ -46,7 +46,6 @@ const Time = (props) => {
     };
   }, [timeEl]); //should run all useEffect everytime timeEl changes
 
-  console.log(Weather)
   return (
     <div>
       <div className="row">
@@ -54,8 +53,8 @@ const Time = (props) => {
           <div className="card blue-grey darken-1 opacity">
             <div className="card-content white-text">
               <span className="card-title">{timeEl}</span>
-              <p>{dateEl}</p>
-              <p><Weather/></p>
+              <span>{dateEl}</span>
+              <span><Weather/></span>
             </div>
           </div>
         </div>
