@@ -1,14 +1,37 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 const Signup = () => {
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
+  const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory("/");
+
+  useEffect(() => {
+    document.title = "Sign Up - Runner's Inertia";
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(firstname, lastname, email, password);
+    try {
+      let signupInfo = {
+        firstname: firstname,
+        lastname: lastname,
+        username: username,
+        email: email,
+        password: password,
+      };
+
+      axios
+        .post(`http://localhost:5000/api/collections/runner`, signupInfo)
+        .then(history.push("/signin"));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -29,6 +52,14 @@ const Signup = () => {
             type="text"
             id="lastname"
             onChange={({ target }) => setLastName(target.value)}
+          />
+        </div>
+        <div className="input-field">
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            onChange={({ target }) => setUserName(target.value)}
           />
         </div>
         <div className="input-field">

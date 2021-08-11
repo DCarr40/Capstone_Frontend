@@ -1,17 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { connect } from "react-redux";
 import { createEvents } from "../../store/actions/eventActions";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 //form to create events
 const CreateEvent = (props) => {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
+  const history = useHistory("/");
+
+  useEffect(() => {
+    document.title = "Create Event - Runner's Inertia";
+  }, []);
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   console.log(title, details);
+  //   //I may have messed up with state at this point
+  //   props.createEvent({ title, details });
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(title, details);
-    //I may have messed up with state at this point
-    props.createEvent({ title, details });
+    try {
+      let eventInfo = {
+        title: title,
+        details: details,
+      };
+
+      axios
+        .post(`http://localhost:5000/api/collections/event`, eventInfo)
+        .then(history.push("/"));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

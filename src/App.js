@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/DashBoard/dashboard";
 import NavBar from "./components/NavBar/navbar";
 import EventDetails from "./components/Event/eventDetail";
@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div>
-        <NavBar/>
+        <NavBar />
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/event/:id" component={EventDetails} />
