@@ -3,6 +3,7 @@ import Notifications from "./notification";
 import EventList from "../Event/eventList";
 import { connect } from "react-redux";
 import Time from "../Time/time";
+import Weather from "../Weather/weather";
 
 const Dashboard = (props) => {
   // console.log(props);
@@ -13,8 +14,8 @@ const Dashboard = (props) => {
   return (
     <div className="dashboard rcorners container">
       <div className="row">
-      <div className="col s7">
-          <Time/>
+        <div className="col s7">
+          <Time />
         </div>
         <div className="col s10 m6">
           {/* <div><Time/></div> */}
