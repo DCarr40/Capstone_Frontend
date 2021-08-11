@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API_KEY from "../../config/weather.json";
-import axios from 'axios';
+import axios from "axios";
 
 const Weather = () => {
   const currentWeatherEL = document.getElementById("currentWeather");
@@ -9,14 +9,10 @@ const Weather = () => {
   const countryEl = document.getElementById("country");
   const currentTempEl = document.getElementById("currentTemp");
 
-
-
   useEffect(() => {
     getWeather();
-      return () => {
-          
-      }
-  }, [])
+    return () => {};
+  }, []);
 
   const getWeather = () => {
     navigator.geolocation.getCurrentPosition(async (success) => {
@@ -30,12 +26,15 @@ const Weather = () => {
           `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=632062b391f82bc75255755dbb7eb685`
         )
         .then((res) => {
-            setTimeZoneEl(res.data.timezone)
+          console.log(res.data);
+          setTimeZoneEl(res.data.timezone);
         })
- 
-        .catch((err) => {console.log(err)})
-        }
-    )}
+
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+  };
   console.log(timeZoneEl);
 
   return (
