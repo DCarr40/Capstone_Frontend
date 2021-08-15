@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Dashboard from "./components/DashBoard/dashboard";
+import Dashboard from "./Screens/DashBoard/dashboard";
 import NavBar from "./components/NavBar/navbar";
 import EventDetails from "./components/Event/eventDetail";
 import Signin from "./components/auth/signin";
@@ -10,8 +10,8 @@ import CreateEvent from "./components/Event/createEvent";
 function App() {
   return (
     <Router>
-      <div>
-        <NavBar />
+      <NavBar />
+      <main>
         <Switch>
           <Route path="/" exact component={Dashboard} />
           <Route path="/event/:id" component={EventDetails} />
@@ -19,7 +19,7 @@ function App() {
           <Route path="/signup" component={Signup} />
           <Route path="/create" component={CreateEvent} />
         </Switch>
-      </div>
+      </main>
     </Router>
   );
 }

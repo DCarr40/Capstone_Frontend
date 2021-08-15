@@ -12,6 +12,9 @@ const SignedInLink = () => {
         <NavLink to="/">Log Out</NavLink>
       </li>
       <li>
+      <p className="black-text  material-icons">notifications</p>
+      </li>
+      <li>
         <NavLink
           to="/"
           className="btn btn-floating black lighten-1 waves-effect waves-light"
@@ -19,6 +22,7 @@ const SignedInLink = () => {
           DC
         </NavLink>
       </li>
+
     </ul>
   );
 };

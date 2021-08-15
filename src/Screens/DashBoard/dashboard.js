@@ -1,9 +1,8 @@
 import React from "react";
-import Notifications from "./notification";
-import EventList from "../Event/eventList";
+import EventList from "../../components/Event/eventList";
 import { connect } from "react-redux";
-import Time from "../Time/time";
-import Weather from "../Weather/weather";
+import Time from "../../components/Time/time";
+import Weather from "../../components/Weather/weather";
 
 const Dashboard = (props) => {
   // console.log(props);
@@ -20,9 +19,6 @@ const Dashboard = (props) => {
         <div className="col s10 m6">
           {/* <div><Time/></div> */}
           <EventList events={events} />
-        </div>
-        <div className="col s10 m5 offset-m1">
-          <Notifications />
         </div>
       </div>
     </div>
