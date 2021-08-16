@@ -2,17 +2,21 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 //Sign in link for navbar
-const SignedInLink = () => {
+const SignedInLink = ({show}) => {
   return (
+    // show &&
     <ul className="right">
       <li>
         <NavLink to="/create">New Event</NavLink>
       </li>
       <li>
+      <i className="fas fa-running"></i>
+      </li>
+      <li>
         <NavLink to="/">Log Out</NavLink>
       </li>
       <li>
-      <p className="black-text  material-icons">notifications</p>
+       <i className="fas fa-hiking"></i>
       </li>
       <li>
         <NavLink

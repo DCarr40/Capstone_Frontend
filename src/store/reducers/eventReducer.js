@@ -1,3 +1,4 @@
+
 const initState = {
   events: [
     { id: "1", title: "find peach", content: "blahahah" },
