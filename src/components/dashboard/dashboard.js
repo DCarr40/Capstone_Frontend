@@ -1,9 +1,9 @@
 import React from "react";
-import Notifications from "./notification";
+// import Notifications from "./notification";
 import EventList from "../event/eventList";
 import { connect } from "react-redux";
-import Time from "../../components/Time/time";
-import Weather from "../../components/Weather/weather";
+import Time from "../Time/time";
+import Weather from "../Weather/weather";
 
 const Dashboard = (props) => {
   // console.log(props);

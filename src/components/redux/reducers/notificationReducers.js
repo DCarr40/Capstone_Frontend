@@ -25,14 +25,13 @@ export const notificationReducers = (
           notificationItems: [...state.notificationItems, item],
         };
       }
-    case actionTypes.ADD_TO_NOTIFICATION:
+    case actionTypes.REMOVE_FROM_NOTIFICATION:
       return {
         ...state,
-        notificationItems: state.notificationItems.filter((itemId) => {
-          itemId.event !== action.payload;
-        }),
+        notificationItems: state.notificationItems.filter(
+          (itemId) => itemId.event !== action.payload
+        ),
       };
-
     default:
       return state;
   }
