@@ -1,10 +1,6 @@
 import React from "react";
-<<<<<<< HEAD:src/components/dashboard/dashboard.js
 import Notifications from "./notification";
 import EventList from "../event/eventList";
-=======
-import EventList from "../../components/Event/eventList";
->>>>>>> 723e35c9635352a378bd502a87a0559af413e62a:src/Screens/DashBoard/dashboard.js
 import { connect } from "react-redux";
 import Time from "../../components/Time/time";
 import Weather from "../../components/Weather/weather";

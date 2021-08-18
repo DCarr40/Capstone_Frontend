@@ -1,10 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-<<<<<<< HEAD
 import Dashboard from "./components/dashboard/dashboard";
-=======
-import Dashboard from "./Screens/DashBoard/dashboard";
->>>>>>> 723e35c9635352a378bd502a87a0559af413e62a
 import NavBar from "./components/NavBar/navbar";
 import EventDetails from "./components/event/eventDetail";
 import Signin from "./components/auth/signin";
