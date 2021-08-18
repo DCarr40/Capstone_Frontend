@@ -27,10 +27,7 @@ const Weather = () => {
     //     )
     //     .then((res) => {
     //       console.log(res.data);
-    //       setTimeZoneEl(res.data.timezone);
-    //       
-    //     })
-
+    //       setTimeZoneEl(res.data.timezone); 
     //     .catch((err) => {
     //       console.log(err);
     //     });
