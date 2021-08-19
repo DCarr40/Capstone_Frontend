@@ -1,15 +1,16 @@
 import * as actionTypes from "../constants/eventConstant";
+
 import axios from "axios";
 
-export const getEvents = () => async (dispatch) => {
+export const getEvent = async () => async (dispatch) => {
   try {
     dispatch({ type: actionTypes.GET_EVENT_REQUEST });
 
-    const { data } = await axios.get("/api/collections/event");
+    const response = await axios.get("/api/collections/event");
 
     dispatch({
       type: actionTypes.GET_EVENT_SUCCESS,
-      payload: data,
+      payload: response,
     });
   } catch (error) {
     dispatch({
@@ -26,7 +27,9 @@ export const getEventDetails = () => async (dispatch) => {
   try {
     dispatch({ type: actionTypes.GET_EVENT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/collections/event/${id}`);
+    const { data } = await axios.get(
+      `/api/collections/event/6111cab948b0fe59f3eea4f0`
+    );
 
     dispatch({
       type: actionTypes.GET_EVENT_DETAILS_SUCCESS,

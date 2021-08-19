@@ -30,7 +30,7 @@ const Signin = () => {
       };
 
      await axios
-        .post(`http://localhost:5000/api/collections/runner`, signinInfo)
+        .post(`http://localhost:5000/api/collections/login`, signinInfo)
         .then((res) => localStorage.setItem("loggedInUser", res))
         .then(history.push("/"));
     } catch (error) {
