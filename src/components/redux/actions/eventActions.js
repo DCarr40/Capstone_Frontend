@@ -6,7 +6,9 @@ export const getEvent = async () => async (dispatch) => {
   try {
     dispatch({ type: actionTypes.GET_EVENT_REQUEST });
 
-    const response = await axios.get("/api/collections/event");
+    const response = await axios.get(
+      `http://localhost:5000/api/collections/event/6111cab948b0fe59f3eea4f0`
+    );
 
     dispatch({
       type: actionTypes.GET_EVENT_SUCCESS,
