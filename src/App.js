@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Dashboard from "./components/dashboard/dashboard";
+import Dashboard from "./components/Dashboard/dashboard";
 import NavBar from "./components/NavBar/navbar";
-import EventDetails from "./components/event/eventDetail";
+import EventDetails from "./components/Events/eventDetail";
 import Signin from "./components/auth/signin";
 import Signup from "./components/auth/signup";
-import CreateEvent from "./components/event/createEvent";
+import CreateEvent from "./components/Events/createEvent";
 
 function App() {
   return (

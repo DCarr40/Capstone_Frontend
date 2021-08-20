@@ -3,10 +3,9 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import { notificationReducers } from "./reducers/notificationReducers";
-import {
-  getEventDetailsReducer,
-  getEventReducer,
-} from "./reducers/eventReducer";
+import {getEventReducer} from "./reducers/eventReducer";
+import { getEventDetailsReducer } from "./reducers/eventDetailReducers";
+
 
 const reducer = combineReducers({
   notifications: notificationReducers,

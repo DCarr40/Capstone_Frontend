@@ -1,6 +1,6 @@
 import React from "react";
 // import Notifications from "./notification";
-import EventList from "../event/eventList";
+import EventList from "../Events/eventList";
 import { connect } from "react-redux";
 import Time from "../Time/time";
 import Weather from "../Weather/weather";

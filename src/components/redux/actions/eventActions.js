@@ -1,7 +1,8 @@
 import * as actionTypes from "../constants/eventConstant";
-
+import * as api from "../../../api/eventApiCalls";
 import axios from "axios";
 
+<<<<<<< HEAD
 export const getEvent =  () => async (dispatch) => {
   try {
     dispatch({ type: actionTypes.GET_EVENT_REQUEST });
@@ -13,42 +14,24 @@ export const getEvent =  () => async (dispatch) => {
       type: actionTypes.GET_EVENT_SUCCESS,
       payload: response,
     });
-  } catch (error) {
-    dispatch({
-      type: actionTypes.GET_EVENT_FAILURE,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  }
-};
-
-export const getEventDetails = () => async (dispatch) => {
+=======
+export const getEvent = () => async (dispatch) => {
   try {
-    dispatch({ type: actionTypes.GET_EVENT_DETAILS_REQUEST });
-
-    const { data } = await axios.get(
-      `/api/collections/event/6111cab948b0fe59f3eea4f0`
-    );
-
-    dispatch({
-      type: actionTypes.GET_EVENT_DETAILS_SUCCESS,
-      payload: data,
-    });
+    const { data } = await api.fetchCollection();
+    console.log(data)
+    dispatch({ type: actionTypes.GET_EVENT_REQUEST, payload: data });
+>>>>>>> a6ef52e2e62df5d589a59156fc446791221f3b9e
   } catch (error) {
-    dispatch({
-      type: actionTypes.GET_EVENT_FAILURE,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
+    console.error(error.message);
   }
 };
 
-export const removeEventDetails = () => (dispatch) => {
-  dispatch({
-    type: actionTypes.GET_EVENT_RESET_DETAILS,
-  });
+export const createEventAction = (event) => async (dispatch) => {
+  try {
+    const { data } = await api.createEvent(event);
+    console.log(data)
+    dispatch({ type: actionTypes.CREATE_EVENT_REQUEST, payload: data });
+  } catch (error) {
+    console.error(error.message);
+  }
 };
