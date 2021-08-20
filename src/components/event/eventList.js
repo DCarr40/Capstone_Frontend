@@ -7,12 +7,10 @@ import { getEvent as listEvents } from "../redux/actions/eventActions";
 const EventList = ({ events }) => {
   const dispatch = useDispatch;
   const getEvents = useSelector((state) => state.getEvent);
-  // const x = getEvents;
-  console.log(getEvents);
+  const x = getEvents;
+  console.log(x);
 
-
-    dispatch(listEvents());
- 
+  dispatch(listEvents());
 
   return (
     <div className="event-list section">

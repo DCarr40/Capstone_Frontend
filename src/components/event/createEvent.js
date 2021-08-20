@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { createEvents } from "../../store/actions/eventActions";
 import axios from "axios";
