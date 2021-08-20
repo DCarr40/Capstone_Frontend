@@ -2,16 +2,17 @@ import React from "react";
 import EventSummary from "./eventSummary";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getEvent as listEvents } from "../redux/actions/eventActions";
+import { getEvent as listEvents } from "../Redux/actions/eventActions";
 
 const EventList = ({ events }) => {
-  const dispatch = useDispatch;
-  const getEvents = useSelector((state) => state.getEvent);
+  const dispatch = useDispatch();
+  const eventsData = useSelector((state) => state.getEvents);
   // const x = getEvents;
-  console.log(getEvents);
+console.log(eventsData)
+// useEffect(() => {
+//   dispatch(listEvents());
+// }, [dispatch])
 
-
-    dispatch(listEvents());
  
 
   return (
