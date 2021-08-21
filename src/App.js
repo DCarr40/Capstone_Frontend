@@ -6,6 +6,7 @@ import EventDetails from "./components/Events/eventDetail";
 import Signin from "./components/auth/signin";
 import Signup from "./components/auth/signup";
 import CreateEvent from "./components/Events/createEvent";
+import { RegisterForm } from "./components/Forms/registerForm";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/signin" component={Signin} />
           <Route path="/signup" component={Signup} />
           <Route path="/create" component={CreateEvent} />
+          <Route path="/register" component={RegisterForm}/>
         </Switch>
       </main>
     </Router>

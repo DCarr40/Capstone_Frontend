@@ -1,9 +1,5 @@
 import React from "react";
-// import Notifications from "./notification";
-import EventList from "../Events/eventList";
-import { connect } from "react-redux";
-import Time from "../Time/time";
-import Weather from "../Weather/weather";
+import {LoginForm as Login} from "../Forms/loginForm";
 
 const Dashboard = (props) => {
   // console.log(props);
@@ -15,15 +11,7 @@ const Dashboard = (props) => {
   
   return (
     <div className="dashboard rcorners container">
-      <div className="row">
-        <div className="col s7">
-          <Time />
-        </div>
-        <div className="col s10 m6">
-          {/* <div><Time/></div> */}
-          <EventList events={events} />
-        </div>
-      </div>
+        <Login/>
     </div>
   );
 };

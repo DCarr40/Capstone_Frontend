@@ -1,6 +1,6 @@
-import * as actionTypes from "../constants/eventConstant";
+import * as actionTypes from "../constants/eventConstants";
 
-export const getEventReducer = (event = [], action) => {
+export const eventReducers = (event = [], action) => {
   switch (action.type) {
     case actionTypes.GET_EVENT_REQUEST:
       return action.payload;
