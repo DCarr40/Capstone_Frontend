@@ -1,7 +1,7 @@
 import * as actionTypes from "../constants/weatherConstants";
 import * as api from "../../../api/weatherApiCalls";
 
-export const getEvent = () => async (dispatch) => {
+export const storeWeather = () => async (dispatch) => {
   try {
     const { data } = await api.fetchCollection();
     console.log(data)
