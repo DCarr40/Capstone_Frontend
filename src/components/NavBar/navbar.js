@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Weather from "../Weather/weather";
-// import SignedInLink from "./signedInLink";
-// import SignedOutLink from "./signedOutLink";
+import SignedInLink from "./signedInLink";
+import SignedOutLink from "./signedOutLink";
 
 const NavBar = () => {
-  const [showDisplay, setShowDisplay] = useState(false);
+  const [showSignInDisplay, setShowSignInDisplay] = useState(false);
+  const [showSignUpDisplay, setShowSignUpDisplay] = useState(false);
+  const userLoggedIn = localStorage.getItem("user");
+  
+  useEffect(() => {
+    if (userLoggedIn) { setShowSignInDisplay(true)}
+    else {  setShowSignUpDisplay(true)}
+  }, [showSignInDisplay, showSignUpDisplay])
+
 
   return (
     <nav className="navbar-wrapper fadeaway">
@@ -13,8 +21,8 @@ const NavBar = () => {
         <NavLink to="/">
           Runner's Inertia
         </NavLink>
-        {/* <SignedInLink show={showDisplay} />
-        <SignedOutLink show={showDisplay} /> */}
+        <SignedInLink show={showSignInDisplay} />
+        <SignedOutLink show={showSignUpDisplay} />
         
       </div>
     </nav>

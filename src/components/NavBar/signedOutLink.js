@@ -7,10 +7,10 @@ const SignedOutLink = ({show}) => {
     // show &&
     <ul className="right">
       <li>
-        <NavLink to="/signup" show='showDisplay'>Signup</NavLink>
+        <NavLink to="/register" show='showDisplay'>Register</NavLink>
       </li>
       <li>
-        <NavLink to="/signin">Login</NavLink>
+        <NavLink to="/">Login</NavLink>
       </li>
     </ul>
   );

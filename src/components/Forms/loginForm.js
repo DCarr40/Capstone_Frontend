@@ -16,7 +16,7 @@ export const LoginForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(loginAction(loginData));
-        history.push("/");
+
     }
 
     return(
@@ -25,7 +25,7 @@ export const LoginForm = () => {
                 <h3 className="white-text">Login</h3>
                 <div className="user-box">
                     <input type="text" placeholder="Email"  id="email" value={loginData.email} onChange={(e) => setLoginData({...loginData, email: e.target.value })}/> 
-                    <input type="password" placeholder="Password" id="password" value={loginData.password} onChange={(e) => setLoginData({...loginData, password: e.target.value })}/> 
+                    <input type="password" placeholder="Password" id="password" value={loginData.password} onChange={(e) => setLoginData({...loginData, password: e.target.value })}/>
                     <button type="submit" >
                     <span></span>
                         <span></span>

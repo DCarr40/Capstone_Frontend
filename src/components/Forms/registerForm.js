@@ -28,7 +28,7 @@ export const RegisterForm = () => {
                     <input type="text" placeholder="Last Name" id="lastname" value={registerData.lastname} onChange={(e) => setRegisterData({...registerData, lastname: e.target.value })}/> 
                     <input type="text" placeholder="Username"id="username" value={registerData.username} onChange={(e) => setRegisterData({...registerData, username: e.target.value })}/> 
                     <input type="text" placeholder="Email"id="email" value={registerData.email} onChange={(e) => setRegisterData({...registerData, email: e.target.value })}/> 
-                    <input type="password" placeholder="Password"id="password" value={registerData.password} onChange={(e) => setRegisterData({...registerData, password: e.target.value })}/> 
+                    <input type="password" placeholder="Password"id="password" value={registerData.password} onChange={(e) => setRegisterData({...registerData, password: e.target.value })}/><br></br>
                     <button type="submit" >
                     <span></span>
                         <span></span>

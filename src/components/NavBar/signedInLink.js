@@ -20,7 +20,7 @@ const SignedInLink = ({show}) => {
       </li>
       <li>
         <NavLink
-          to="/"
+          to="/homepage"
           className="btn btn-floating black lighten-1 waves-effect waves-light"
         >
           DC

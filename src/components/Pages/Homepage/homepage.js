@@ -1,7 +1,7 @@
 import React from "react";
-import {LoginForm as Login} from "../Forms/loginForm";
+import {LoginForm as Login} from "../../Forms/loginForm";
 
-const Dashboard = (props) => {
+const Homepage = (props) => {
 
   const { events } = props;
 
@@ -13,4 +13,4 @@ const Dashboard = (props) => {
   );
 };
 
-export default Dashboard;
+export default Homepage;
