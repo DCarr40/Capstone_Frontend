@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { loginAction } from '../Redux/actions/authActions';
+import { storeRunnerAction } from '../Redux/actions/runnerActions';
 import "./style.css";
 
 export const LoginForm = () => {
     const [loginData, setLoginData] = useState({email: '', password: ''});
-    const history = useHistory("/");
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -15,8 +14,8 @@ export const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        dispatch(storeRunnerAction(loginData.email))
         dispatch(loginAction(loginData));
-
     }
 
     return(

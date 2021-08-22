@@ -3,15 +3,15 @@ import { useDispatch } from "react-redux";
 import { LoginForm as Login } from "../../Forms/loginForm";
 import { logoutAction } from "../../Redux/actions/authActions";
 
-const Dashboard = () => {
+const Loginpage = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(logoutAction), []);
+  useEffect(() => dispatch(logoutAction()), []);
 
   useEffect(() => (document.title = "Log In - Runner's Inertia"), []);
 
   return (
-    <div className="dashboard rcorners container">
+    <div className="loginpage rcorners container">
       <Login />
     </div>
   );
@@ -23,4 +23,4 @@ const Dashboard = () => {
 //So mapStateToProps updates the state whenever the state is changed in the store
 //I used this link to help understand it https://react-redux.js.org/api/connect
 
-export default Dashboard;
+export default Loginpage;

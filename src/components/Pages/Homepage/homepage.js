@@ -1,20 +1,12 @@
-import React from "react";
-import SignedInLink from "../../NavBar/signedInLink";
+import React, { useEffect } from "react";
 
 const Homepage = (props) => {
+  useEffect(() => (document.title = "Home Page - Runner's Inertia"), []);
 
-  useEffect(() => document.title = "Home Page - Runner's Inertia", [])
-
-  
   return (
-    <nav className="navbar-wrapper fadeaway">
-      <div className="">
-        <NavLink to="/">
-          Runner's Inertia
-        </NavLink>
-        <SignedInLink />
-      </div>
-    </nav>
+    <div>
+      <button className="btn"to="/forecast">Checkout The Forecast</button>
+    </div>
   );
 };
 

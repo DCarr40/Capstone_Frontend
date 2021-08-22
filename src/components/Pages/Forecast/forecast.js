@@ -1,19 +1,13 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
 const Forecast = () => {
+  useEffect(() => (document.title = "Forecast - Runner's Inertia"), []);
 
-    useEffect(() => document.title = "Forecast - Runner's Inertia", [])
+  return (
+      <div>
+          
+      </div>
+  )
+};
 
-    return (
-        <nav className="navbar-wrapper fadeaway">
-          <div className="">
-            <NavLink to="/">
-              Runner's Inertia
-            </NavLink>
-            <SignedInLink />
-          </div>
-        </nav>
-      );
-}
-
-export default Forecast
+export default Forecast;
