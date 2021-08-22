@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import Weather from "../Weather/weather";
 import SignedInLink from "./signedInLink";
 import SignedOutLink from "./signedOutLink";
 
@@ -21,7 +20,6 @@ const NavBar = () => {
         <NavLink to="/">
           Runner's Inertia
         </NavLink>
-        <SignedInLink show={showSignInDisplay} />
         <SignedOutLink show={showSignUpDisplay} />
         
       </div>

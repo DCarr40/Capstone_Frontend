@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import {LoginForm as Login} from "../../Forms/loginForm";
+import { LoginForm as Login } from "../../Forms/loginForm";
 import { logoutAction } from "../../Redux/actions/authActions";
 
 const Dashboard = () => {
-
-  const [userHasLoggedIn, setUserHasLoggedIn] = useState(false);
-  const user = localStorage.getItem("user");
-  const history = useHistory("/homepage")
   const dispatch = useDispatch();
-  useEffect(() => dispatch(logoutAction) , [])
 
-  useEffect(() => document.title = "Log In - Runner's Inertia", [])
+  useEffect(() => dispatch(logoutAction), []);
 
-  useEffect(() => {if (user) {setUserHasLoggedIn(true)}}, [userHasLoggedIn])
+  useEffect(() => (document.title = "Log In - Runner's Inertia"), []);
 
   return (
     <div className="dashboard rcorners container">
-        <Login/>
+      <Login />
     </div>
   );
 };

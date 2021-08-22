@@ -5,12 +5,14 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { notificationReducers } from "./reducers/notificationReducers";
 import {eventReducers} from "./reducers/eventReducers";
 import { authReducers } from "./reducers/authReducers";
+import { weatherReducers } from "./reducers/weatherReducers";
 
 
 const reducer = combineReducers({
   notifications: notificationReducers,
   eventReducers: eventReducers,
   authReducers: authReducers,
+  weatherReducers: weatherReducers,
 });
 
 const middleware = [thunk]; // will use thunk as middleware. I will basically pause the action creator to do an async func.

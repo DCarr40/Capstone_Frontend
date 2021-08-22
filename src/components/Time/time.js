@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Weather from "../Weather/weather"
 
 const Time = (props) => {
   const [timeEl, setTimeEl] = useState("");
@@ -54,7 +53,6 @@ const Time = (props) => {
             <div className="card-content white-text">
               <span className="card-title">{timeEl}</span>
               <span>{dateEl}</span>
-              <span><Weather/></span>
             </div>
           </div>
         </div>

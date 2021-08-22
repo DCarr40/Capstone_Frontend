@@ -1,15 +1,20 @@
 import React from "react";
-import {LoginForm as Login} from "../../Forms/loginForm";
+import SignedInLink from "../../NavBar/signedInLink";
 
 const Homepage = (props) => {
 
-  const { events } = props;
+  useEffect(() => document.title = "Home Page - Runner's Inertia", [])
 
   
   return (
-    <div className="homepage rcorners container">
-        {/* <Login/> */}
-    </div>
+    <nav className="navbar-wrapper fadeaway">
+      <div className="">
+        <NavLink to="/">
+          Runner's Inertia
+        </NavLink>
+        <SignedInLink />
+      </div>
+    </nav>
   );
 };
 
