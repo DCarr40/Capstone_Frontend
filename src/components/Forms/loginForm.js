@@ -8,13 +8,11 @@ export const LoginForm = () => {
     const [loginData, setLoginData] = useState({email: '', password: ''});
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        document.title = "Log In - Runner's Inertia";
-      }, []);
+    useEffect(() => document.title = "Log In - Runner's Inertia", []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(storeRunnerAction(loginData.email))
+        dispatch(storeRunnerAction(loginData.email));
         dispatch(loginAction(loginData));
     }
 

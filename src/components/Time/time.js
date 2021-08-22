@@ -49,7 +49,7 @@ const Time = (props) => {
     <div>
       <div className="row">
         <div className="col s12 m6">
-          <div className="card blue-grey darken-1 opacity">
+          <div className="card grey darken-3 ">
             <div className="card-content white-text">
               <span className="card-title">{timeEl}</span>
               <span>{dateEl}</span>

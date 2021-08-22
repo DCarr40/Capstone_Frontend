@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar/navbar";
-import EventDetails from "./components/Events/eventDetail";
-import CreateEvent from "./components/Events/createEvent";
+import EventDetails from "./components/Pages/Events/eventDetail";
+import CreateEvent from "./components/Pages/Events/createEvent";
 import { RegisterForm } from "./components/Forms/registerForm";
 import Homepage from "./components/Pages/Homepage/homepage";
 import Forecast from "./components/Pages/Forecast/forecast";
