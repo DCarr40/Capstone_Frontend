@@ -1,6 +1,8 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import * as api from "../../api/authApiCalls";
 import { loginAction } from "../Redux/actions/authActions";
 import { runnerReducers } from "../Redux/reducers/runnerReducers";
 import "./style.css";
@@ -13,10 +15,10 @@ export const LoginForm = () => {
   useEffect(() => (document.title = "Log In - Runner's Inertia"), []);
   useEffect(() => reset, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+      e.preventDefault();
     dispatch(loginAction(loginData));
-    history.push("/homepage");
-  };
+  }
 
   return (
     <div className="form-box">

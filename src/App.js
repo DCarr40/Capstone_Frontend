@@ -7,6 +7,7 @@ import { RegisterForm } from "./components/Forms/registerForm";
 import Homepage from "./components/Pages/Homepage/homepage";
 import Forecast from "./components/Pages/Forecast/forecast";
 import Loginpage from "./components/Pages/Login/loginPage";
+import EventList2 from "./components/Pages/Events/allEvents";
 
 const App = () => {
 
@@ -22,6 +23,8 @@ const App = () => {
           <Route path="/forecast" component={Forecast}/>
           <Route path="/event/:id" component={EventDetails} />
           <Route path="/create" component={CreateEvent} />
+          <Route path="/allevents" component={EventList2} />
+
         </Switch>
       </main>
     </Router>

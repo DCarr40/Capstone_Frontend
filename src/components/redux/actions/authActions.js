@@ -4,12 +4,13 @@ import { useHistory } from "react-router-dom";
 
 export const loginAction = (e) => async (dispatch) => {
   try {
+        
     const { data } = await api.loginApiCall(e);
     console.log(data);
     const userInfo = localStorage.setItem("userInfo", JSON.stringify(data));
-    dispatch({ type: actionTypes.LOGIN_REQUEST, payload: userInfo });
+    window.location.assign("/homepage");
+    alert("Prepare to Have your mind blown");
   } catch (error) {
-    window.location.assign("/");
     alert("Email or Password is Incorrect. Please Try Again");
   }
 };
@@ -20,7 +21,7 @@ export const registerAction = (e) => async (dispatch) => {
     console.log(data);
     dispatch({ type: actionTypes.REGISTER_REQUEST, payload: data });
   } catch (error) {
-    alert.error(error.message);
+    alert(error.message);
   }
 };
 

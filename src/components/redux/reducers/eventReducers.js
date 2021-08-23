@@ -18,6 +18,8 @@ export const eventReducers = (event = [], action) => {
         loading: false,
         action: [...event, action.payload],
       };
+    case actionTypes.GET_ALL_EVENTS_REQUEST:
+      return [...event, action.payload];
     default:
       return event;
   }

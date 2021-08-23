@@ -29,3 +29,13 @@ export const removeEventAction = (event) => async (dispatch) => {
     console.error(error.message);
   }
 };
+
+export const getAllEventsAction = () => async (dispatch) => {
+  try {
+    const { data } = await api.fetchCollection();
+    console.log(data)
+    dispatch({ type: actionTypes.GET_ALL_EVENTS_REQUEST, payload: data });
+  } catch (error) {
+    console.error(error.message);
+  }
+};
