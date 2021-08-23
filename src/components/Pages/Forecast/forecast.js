@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { storeWeatherAction } from "../../Redux/actions/weatherActions";
+import Time from "../../Time/time";
 
 const Forecast = () => {
   const dispatch = useDispatch();
@@ -34,18 +35,26 @@ const Forecast = () => {
   };
   return (
     <div>
-        <div>
-        <tbody>
-          <tr>
-            {/* <td key={weather}>{weather}</td>
-            <td key={weather}>{weather}</td>
-            <td key={weather}>{weather}</td>
-            <td key={weather}>{weather}</td>
-            <td key={weather}>{weather}</td>
-            <td key={weather}>{weather}</td>
-            <td key={weather}>{weather}</td> */}
-          </tr>
-        </tbody>
+        <div className="container white-text">
+          <div className="current__info">
+            <div className="time__container"><Time/></div>
+            <div className="current__weather" id= "current__weather">
+              <div>
+                <p>Humidity</p>
+                <p>95.2%</p>
+              </div>
+              <div>
+                <p>Pressure</p>
+                <p>121</p>
+              </div>
+              <div>
+                <p>Wind Speed</p>
+                <p>222</p>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
       <div>
