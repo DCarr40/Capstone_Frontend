@@ -5,29 +5,10 @@ const Time = (props) => {
   const [dateEl, setDateEl] = useState("");
 
   //https://www.w3schools.com/jsref/met_win_setinterval.asp
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",];
+
+  const days = [ "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",];
+
   useEffect(() => {
     setInterval(() => {
       const time = new Date();

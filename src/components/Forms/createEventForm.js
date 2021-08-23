@@ -5,18 +5,11 @@ import { createEventAction } from "../Redux/actions/eventActions";
 import "./style.css";
 
 export const CreateEventForm = () => {
-  const [eventData, setEventData] = useState({
-    title: "",
-    details: "",
-    creator: "",
-    tags: "",
-  });
   const history = useHistory("/");
   const dispatch = useDispatch();
+  const [eventData, setEventData] = useState({title: "",details: "",creator: "",tags: "",});
 
-  useEffect(() => {
-    document.title = "Create Event - Runner's Inertia";
-  }, []);
+  useEffect(() => document.title = "Create Event - Runner's Inertia", []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

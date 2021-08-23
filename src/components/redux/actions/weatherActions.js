@@ -14,8 +14,7 @@ export const storeWeatherAction = () => async (dispatch) => {
       console.log(data.daily);
       let dailyWeatherInfo = localStorage.setItem("weather", data.daily);
 
-
-      dispatch({ type: actionTypes.GET_WEATHER_REQUEST, loading: true, payload: dailyWeatherInfo });
+      dispatch({ type: actionTypes.GET_WEATHER_REQUEST, loading: true, payload: dailyWeatherInfo});
     });
   } catch (error) {
     console.error(error.message);

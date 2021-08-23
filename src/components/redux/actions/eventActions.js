@@ -20,3 +20,12 @@ export const createEventAction = (event) => async (dispatch) => {
     console.error(error.message);
   }
 };
+
+export const removeEventAction = (event) => async (dispatch) => {
+  try {
+    const data  = localStorage.removeItem("event");
+    dispatch({ type: actionTypes.REMOVE_EVENT_REQUEST, payload: data });
+  } catch (error) {
+    console.error(error.message);
+  }
+};

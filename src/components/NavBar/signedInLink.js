@@ -13,14 +13,7 @@ const SignedInLink = ({show}) => {
       <li>
 
       </li>
-      <li>
-        <NavLink
-          to="/homepage"
-          className="btn btn-floating black lighten-1 waves-effect waves-light"
-        >
-          DC
-        </NavLink>
-      </li>
+
 
     </ul>
   );

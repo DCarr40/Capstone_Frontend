@@ -6,11 +6,11 @@ export const loginAction = (e) => async (dispatch) => {
   try {
     const { data } = await api.loginApiCall(e);
     console.log(data);
-    let userInfo = localStorage.setItem("user",data)
-    window.location.assign("/homepage")
+    const userInfo = localStorage.setItem("userInfo", JSON.stringify(data));
     dispatch({ type: actionTypes.LOGIN_REQUEST, payload: userInfo });
   } catch (error) {
-    alert(error.message);
+    window.location.assign("/");
+    alert("Email or Password is Incorrect. Please Try Again");
   }
 };
 
@@ -24,21 +24,19 @@ export const registerAction = (e) => async (dispatch) => {
   }
 };
 
-
 export const logoutAction = (e) => async (dispatch) => {
-    try {
-    const clearUserInfo = localStorage.removeItem("user")
+  try {
+    const clearUserInfo = localStorage.removeItem("user");
     const history = useHistory();
-    history.push("/")
-      dispatch({ type: actionTypes.LOGOUT_REQUEST, payload: clearUserInfo });
-    } catch (error) {
-      console.error(error.message);
-    }
-  };
+    history.push("/");
+    dispatch({ type: actionTypes.LOGOUT_REQUEST, payload: clearUserInfo });
+  } catch (error) {
+    console.error(error.message);
+  }
+};
 
 // const handleSubmit = (e) => {
 //     e.preventDefault();
 //     dispatch(logoutAction(loginData));
 //     history.push("/");
 // }
-
