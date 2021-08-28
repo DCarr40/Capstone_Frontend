@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/runnerConstants";
+import * as actionTypes from "./runnerConstants";
 
 export const runnerReducers = ( runner= [] , action) => {
   switch (action.type) {

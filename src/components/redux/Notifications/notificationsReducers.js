@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/notifications";
+import * as actionTypes from "./notificationsConstants";
 
 export const notiReducers = (state = { notiItems: [] }, action) => {
   switch (action.type) {

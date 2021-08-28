@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/notifications";
+import * as actionTypes from "./notificationsConstants";
 import axios from "axios";
 
 export const addToNotifications = (id) => async (dispatch, getState) => {

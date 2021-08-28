@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/eventConstants";
+import * as actionTypes from "./eventConstants";
 
 export const eventReducers = (event = [], action) => {
   switch (action.type) {

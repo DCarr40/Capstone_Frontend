@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/eventConstants";
+import * as actionTypes from "./eventConstants";
 import * as api from "../../../api/eventApiCalls";
 
 export const getEvent = () => async (dispatch) => {

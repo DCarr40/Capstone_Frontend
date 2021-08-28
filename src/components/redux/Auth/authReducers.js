@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/authConstants";
+import * as actionTypes from "./authConstants";
 
 export const authReducers = (state = [], action) => {
   switch (action.type) {
