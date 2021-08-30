@@ -1,7 +1,7 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { LoginForm as Login } from "../../Forms/loginForm";
-import { logoutAction } from "../../Redux/actions/authActions";
+import { logoutAction } from "../../Redux/Auth/authActions";
 
 const Loginpage = () => {
   const dispatch = useDispatch();

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import SearchBar from "../SearchBar/searchBar";
 
 //Sign in link for navbar
 const SignedInLink = ({show}) => {
@@ -7,7 +8,7 @@ const SignedInLink = ({show}) => {
     // show &&
     <ul className="right">
       <li>
-    
+      <div><SearchBar/></div>
       </li>
 
       <li>

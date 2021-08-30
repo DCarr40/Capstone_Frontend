@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/authConstants";
+import * as actionTypes from "../Auth/authConstants";
 import * as api from "../../../api/authApiCalls";
 import { useHistory } from "react-router-dom";
 

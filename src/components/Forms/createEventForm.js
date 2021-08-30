@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { createEventAction } from "../Redux/actions/eventActions";
+import { createEventAction } from "../Redux/Events/eventActions";
 import "./style.css";
 
 export const CreateEventForm = () => {

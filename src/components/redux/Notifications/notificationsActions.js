@@ -1,30 +1,34 @@
 import * as actionTypes from "./notificationsConstants";
-import axios from "axios";
 
-export const addToNotifications = (id) => async (dispatch, getState) => {
-  const { data } = await axios.get(`/api/collections/event/${id}`);
-
+export const addToNotifications = (eventId) => async (dispatch, getState) => {
+  /* 
+  1.) take in eventId
+  2.) add it to backend notifications
+*/
   dispatch({
     type: actionTypes.ADD_TO_NOTIFICATION,
-
-    payload: {
-      event: data._id,
-      title: data.title,
-      details: data.details,
-    },
+    payload: { event: eventId },
   });
-
-  localStorage.setItem(
-    `notifications`,
-    JSON.stringify(getState().notifications.notificationItems)
-  );
 };
 
-export const removeFromNotifications = () => (dispatch, getState) => {
+export const removeFromNotifications = (eventId) => (dispatch, getState) => {
+    /* 
+  1.) take in eventId
+  2.) remove it from backend notifications
+*/
   dispatch({
-    type: actionTypes.REMOVE_NOTIFICATION,
-    payload: id
+    type: actionTypes.REMOVE_FROM_NOTIFICATION,
+    payload: {event:eventId}
   });
+};
 
-  localStorage.setItem(`notifications`, JSON.stringify(getState().notifications.notificationItems))
+export const loadCurrentNotifications = (eventId) => (dispatch, getState) => {
+  /* 
+1.) take in eventId
+2.) add it to backend notifications
+*/
+dispatch({
+  type: actionTypes.LOAD_CURRENT_NOTIFICATION,
+  payload: {event:eventId}
+});
 };

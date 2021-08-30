@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import * as api from "../../api/authApiCalls";
-import { loginAction } from "../Redux/actions/authActions";
-import { runnerReducers } from "../Redux/reducers/runnerReducers";
+import { loginAction } from "../Redux/Auth/authActions";
+import { runnerReducers } from "../Redux/Runners/runnerReducers";
 import "./style.css";
 
 export const LoginForm = () => {

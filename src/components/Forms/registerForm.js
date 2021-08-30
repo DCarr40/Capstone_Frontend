@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { registerAction } from "../Redux/actions/authActions";
+import { registerAction } from "../Redux/Auth/authActions";
 import "./style.css";
 
 export const RegisterForm = () => {

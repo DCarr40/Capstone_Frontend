@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { storeWeatherAction } from "../../Redux/actions/weatherActions";
+import { storeWeatherAction } from "../../Redux/Weather/weatherActions";
 import Time from "../../Time/time";
 
 const Forecast = () => {

@@ -1,6 +1,11 @@
 import * as actionTypes from "./notificationsConstants";
 
-export const notiReducers = (state = { notiItems: [] }, action) => {
+export const INITIAL_STATE = {
+  events: [], 
+};
+
+export const notiReducers = (state = INITIAL_STATE, action) => {
+
   switch (action.type) {
     case actionTypes.ADD_TO_NOTIFICATION:
       const item = action.payload;

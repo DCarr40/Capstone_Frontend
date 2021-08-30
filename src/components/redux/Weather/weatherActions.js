@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/weatherConstants";
+import * as actionTypes from "../Weather/weatherConstants";
 import axios from "axios";
 
 export const storeWeatherAction = () => async (dispatch) => {

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
-import { runnerReducers } from "../../Redux/reducers/runnerReducers";
+import { runnerReducers } from "../../Redux/Runners/runnerReducers";
 import EventList from "../Events/eventList";
 import "./homepage.css";
 const Homepage = () => {
