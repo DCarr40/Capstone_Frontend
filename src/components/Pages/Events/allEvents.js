@@ -38,8 +38,8 @@ const EventList2 = () => {
           <i className="fas fa-arrow-left"> Go Back</i>
         </button>
       </div>
-      <h2 className="white-text ">Event List</h2>
-      <div>{data}</div>
+      <h2 className="white-text ">Event List (Scroll Through All Events)</h2>
+      <div className="myBox">{data}</div>
     </div>
   );
 };
