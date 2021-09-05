@@ -7,9 +7,14 @@ import "./style.css";
 export const CreateEventForm = () => {
   const history = useHistory("/");
   const dispatch = useDispatch();
-  const [eventData, setEventData] = useState({title: "",details: "",creator: "",tags: "",});
+  const [eventData, setEventData] = useState({
+    title: "",
+    details: "",
+    creator: "",
+    tags: "",
+  });
 
-  useEffect(() => document.title = "Create Event - Runner's Inertia", []);
+  useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

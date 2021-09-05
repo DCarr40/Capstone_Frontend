@@ -30,7 +30,7 @@ const Homepage = () => {
 
       <div>
         <button className="mybutton whit-text" onClick={goToCreateRunGroupPage}>
-          <i className="fas fa-hiking"> Create Run Group</i>
+          <i className="fas fa-users"> Create Run Group</i>
         </button>
       </div>
       <br></br>
@@ -47,7 +47,7 @@ const Homepage = () => {
         </button>
       </div>
       <br></br>
-      
+
       <div>
         <button className="mybutton whit-text" onClick={letsLogOut}>
           {" "}
