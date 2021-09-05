@@ -1,0 +1,11 @@
+.card {
+  width: fit-content;
+  height: 35%;
+  padding-bottom: 0%;
+}
+
+
+.container{
+  width: fit-content;
+  block-size: fit-content;
+}
