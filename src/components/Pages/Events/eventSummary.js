@@ -35,7 +35,7 @@ const EventSummary = ({ event }) => {
           <p>Posted by -{event.creator}</p>
           <p className="black-text ">Created at {event.createdAt}</p>
           <p>
-            <button onClick={addEventToRunner}>Add Event</button>
+            <button onClick={addEventToRunner}>View Event</button>
           </p>
         </div>
       </div>

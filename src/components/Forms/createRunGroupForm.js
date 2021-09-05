@@ -33,7 +33,7 @@ export const CreateRunGroupForm = () => {
           />
         </div>
         <div className="inputbox">
-          <label htmlFor="title">Event Creator</label>
+          <label htmlFor="title">Group Type</label>
           <input
             type="text"
             id="groupType"

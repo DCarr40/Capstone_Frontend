@@ -32,8 +32,8 @@ const AllRunGroups = () => {
   return (
     <div className="event-list section">
       <div>
-        <h3 className="white-text "> All Events </h3>
-        <h5 className="white-text ">Scroll Through All Events</h5>
+        <h3 className="white-text "> All Run Groups</h3>
+        <h5 className="white-text ">Scroll Through All Run Groups</h5>
       </div>
       <div className="myBox">
         <div>{data}</div>

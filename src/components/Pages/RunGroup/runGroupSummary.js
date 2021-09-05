@@ -7,27 +7,30 @@ import "./styles.css";
 //It will be placed in the run group list with multiple run groups
 const GroupSummary = ({ group }) => {
   const dispatch = useDispatch();
+  const history = useHistory("/groupPage");
   const groupsDataArray = useSelector((state) => state.runGroupReducers);
-  const [groupData, setGroupData] = useState({ name: "", groupType: "" , events:0 ,runners:0 });
+  const [groupData, setGroupData] = useState({
+    name: "",
+    groupType: "",
+    events: 0,
+    runners: 0,
+  });
 
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    groupsDataArray.push(groupData.id);
-  };
-
-  const addEventToRunner = () => {};
+  const viewGroupPage = () => history.push("/groupPage");
 
   return (
     <div className="container">
       <div className="card z-depth-1 event-summary rcorners fadeaway hoverable">
         <div className="card-content ">
           <span className="card-title ">{group.name}</span>
-          <p>Posted by -{group.groupType}</p>
+          <p>Group Type -{group.groupType}</p>
+          <p className="black-text "> # of Runners {group.runners.length}</p>
+          <p className="black-text "> # of Events {group.events.length}</p>
           <p className="black-text ">Created at {group.createdAt}</p>
           <p>
-            <button onClick={addEventToRunner}>Add Event</button>
+            <button onClick={viewGroupPage}>View Group</button>
           </p>
         </div>
       </div>
