@@ -1,34 +1,44 @@
 import * as actionTypes from "./rungroupConstants";
 
-export const addToRunGroup = (runGroupId) => async (dispatch, getState) => {
-  /* 
-  1.) take in runGroupId
-  2.) add it to backend run group
-*/
+export const createRunGroup = (runGroupId) => async (dispatch, getState) => {
   dispatch({
     type: actionTypes.ADD_TO_RUNGROUP,
     payload: { runGroup: runGroupId },
   });
 };
 
-export const removeFromRunGroup = (runGroupId) => (dispatch, getState) => {
-  /* 
-  1.) take in runGroupId
-  2.) remove it from backend run group
-*/
+export const addEventToRunGroup = (runGroupId) => async (dispatch, getState) => {
   dispatch({
-    type: actionTypes.REMOVE_FROM_RUNGROUP,
+    type: actionTypes.ADD_EVENT_TO_RUNGROUP,
     payload: { runGroup: runGroupId },
   });
 };
 
-export const loadCurrentRunGroup = (runGroupId) => (dispatch, getState) => {
-  /* 
-1.) take in runGropuId
-2.) add it to backend run group
-*/
+export const addToRunGroup = (runGroupId) => async (dispatch, getState) => {
   dispatch({
-    type: actionTypes.LOAD_CURRENT_RUNGROUP,
+    type: actionTypes.ADD_RUNNER_TO_RUNGROUP,
+    payload: { runGroup: runGroupId },
+  });
+};
+
+
+export const deleteRunGroup = (runGroupId) => (dispatch, getState) => {
+  dispatch({
+    type: actionTypes.DELETE_RUNGROUP,
+    payload: { runGroup: runGroupId },
+  });
+};
+
+export const getAllRunGroups = (runGroupId) => (dispatch, getState) => {
+  dispatch({
+    type: actionTypes.GET_ALL_RUNGROUPS,
+    payload: { runGroup: runGroupId },
+  });
+};
+
+export const getRunGroupById = (runGroupId) => (dispatch, getState) => {
+  dispatch({
+    type: actionTypes.GET_RUNGROUP_BY_ID,
     payload: { runGroup: runGroupId },
   });
 };

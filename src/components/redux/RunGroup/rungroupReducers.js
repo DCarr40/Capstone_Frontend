@@ -7,14 +7,21 @@ export const INITIAL_STATE = {
 
 const runGroupReducers = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.ADD_TO_RUNGROUP:
+    case actionTypes.CREATE_RUNGROUP:
       return {};
-    case actionTypes.REMOVE_FROM_RUNGROUP:
+    case actionTypes.ADD_EVENT_TO_RUNGROUP:
       return {};
-    case actionTypes.LOAD_CURRENT_RUNGROUP:
+    case actionTypes.ADD_RUNNER_TO_RUNGROUP:
       return {};
-      default: return state
+    case actionTypes.DELETE_RUNGROUP:
+      return {};
+    case actionTypes.GET_RUNGROUP_BY_ID:
+      return {};
+    case actionTypes.GET_ALL_RUNGROUPS:
+      return {};
+    default:
+      return state;
   }
 };
 
-export default runGroupReducers
+export default runGroupReducers;
