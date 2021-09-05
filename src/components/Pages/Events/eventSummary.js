@@ -23,7 +23,7 @@ const EventSummary = ({ event }) => {
     eventsDataArray.pop(eventData.id);
   };
 
-  const removeEvent = () => {
+  const addEventToRunner = () => {
 
   };
 
@@ -35,7 +35,7 @@ const EventSummary = ({ event }) => {
           <p>Posted by -{event.creator}</p>
           <p className="black-text ">Created at {event.createdAt}</p>
           <p>
-            <button onClick={removeEvent}>Remove Event</button>
+            <button onClick={addEventToRunner}>Add Event</button>
           </p>
         </div>
       </div>
