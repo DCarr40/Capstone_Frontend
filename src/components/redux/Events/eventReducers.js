@@ -1,8 +1,7 @@
 import * as actionTypes from "./eventConstants";
 
 export const INITIAL_STATE = {
-  events: [], //{id, title, details, qty}
-  filter: "",
+  events: [],
 };
 
 export const eventReducers = (state = INITIAL_STATE, action) => {

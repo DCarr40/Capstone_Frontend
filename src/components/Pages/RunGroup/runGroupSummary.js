@@ -35,4 +35,4 @@ const GroupSummary = ({ group }) => {
   );
 };
 
-export default EventSummary;
+export default GroupSummary;

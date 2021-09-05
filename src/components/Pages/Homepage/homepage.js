@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import AllEvents from "../Events/allEvents";
+import AllRunGroups from "../RunGroup/allRunGroups";
 import "./homepage.css";
 
 const Homepage = () => {
@@ -59,6 +60,12 @@ const Homepage = () => {
       <div className="container">
         <div class="col s6">
           <AllEvents />
+        </div>
+      </div>
+
+      <div className="container">
+        <div class="col s6">
+          <AllRunGroups />
         </div>
       </div>
     </div>

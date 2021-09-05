@@ -1,8 +1,12 @@
 import * as actionTypes from "./rungroupConstants";
 
 export const INITIAL_STATE = {
-  events: [], //{id, title, details, qty}
-  runners: [], //{id, username, qty}
+  groups: {
+    name: "",
+    groupType: "",
+    events: [], 
+    runners: [],
+  }
 };
 
 const runGroupReducers = (state = INITIAL_STATE, action) => {

@@ -7,7 +7,7 @@ export const createRunGroupAction = (runGroup) => async (dispatch) => {
     console.log(data);
     dispatch({
       type: actionTypes.CREATE_RUNGROUP,
-      payload: { runGroup: runGroupId },
+      payload: data,
     });
   } catch (error) {
     console.error(error.message);
@@ -36,7 +36,7 @@ export const deleteRunGroupAction = (runGroupId) => (dispatch, getState) => {
   });
 };
 
-export const getAllRunGroups = (runGroupId) => (dispatch, getState) => {
+export const getAllRunGroupsActions = (runGroupId) => (dispatch, getState) => {
   dispatch({
     type: actionTypes.GET_ALL_RUNGROUPS,
     payload: { runGroup: runGroupId },

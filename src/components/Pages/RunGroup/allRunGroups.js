@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from "react";
-import EventSummary from "./eventSummary";
 import { useSelector, useDispatch } from "react-redux";
-import { getAllEventsAction } from "../../Redux/Events/eventActions";
+import { getAllRunGroupsActions } from "../../Redux/RunGroup/rungroupActions";
+import GroupSummary from "./runGroupSummary";
 
-const AllEvents = () => {
+const AllRunGroups = () => {
   const dispatch = useDispatch();
-  const events = useSelector((state) => state.event.events[0]);
+  const groups = useSelector((state) => state.runGroup.groups);
   const [data, setData] = useState([]);
-  useEffect(() => {
-    dispatch(getAllEventsAction());
 
-    if (!events) {
+  useEffect(() => {
+    dispatch(getAllRunGroupsActions());
+
+    if (!groups) {
       setData([<p>...Loading</p>]);
     } else {
       setData(
-        events.map((events) => (
-          <EventSummary
-            event={events}
-            key={events.id}
-            title={events.title}
-            details={events.details}
-            creator={events.creator}
+        groups.map((groups) => (
+          <GroupSummary
+            group={groups}
+            key={groups.id}
+            name={groups.name}
+            groupType={groups.groupType}
+            runners={groups.runners.length}
+            events={groups.events.length}
           />
         ))
       );
     }
-  }, [events]);
+  }, [groups]);
 
   return (
     <div className="event-list section">
@@ -40,4 +42,4 @@ const AllEvents = () => {
   );
 };
 
-export default AllEvents;
+export default AllRunGroups;
