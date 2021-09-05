@@ -1,16 +1,13 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import AllEvents from "../Events/allEvents";
 import AllRunGroups from "../RunGroup/allRunGroups";
 import "./homepage.css";
 
 const Homepage = () => {
-  const runnerData = useSelector((state) => state.runnerReducers);
-  console.log(runnerData);
-  const history = useHistory("/forecast");
-
   useEffect(() => (document.title = "Home Page - Runner's Inertia"), []);
+
+  const history = useHistory("/forecast");
 
   const goToForecastPage = () => history.push("/forecast");
 
@@ -43,7 +40,6 @@ const Homepage = () => {
         </button>
       </div>
       <br></br>
-
       <div>
         <button className="mybutton whit-text" onClick={goToAllEventsPage}>
           {" "}
@@ -51,6 +47,7 @@ const Homepage = () => {
         </button>
       </div>
       <br></br>
+      
       <div>
         <button className="mybutton whit-text" onClick={letsLogOut}>
           {" "}

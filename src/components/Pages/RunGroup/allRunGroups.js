@@ -5,7 +5,7 @@ import GroupSummary from "./runGroupSummary";
 
 const AllRunGroups = () => {
   const dispatch = useDispatch();
-  const groups = useSelector((state) => state.runGroup.groups);
+  const groups = useSelector((state) => state.runGroup.groups[0]);
   const [data, setData] = useState([]);
 
   useEffect(() => {

@@ -8,7 +8,7 @@ import "./styles.css";
 const GroupSummary = ({ group }) => {
   const dispatch = useDispatch();
   const groupsDataArray = useSelector((state) => state.runGroupReducers);
-  const [groupData, setGroupData] = useState({ name: "", groupType: "" });
+  const [groupData, setGroupData] = useState({ name: "", groupType: "" , events:0 ,runners:0 });
 
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 

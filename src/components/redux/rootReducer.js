@@ -3,14 +3,14 @@ import { notiReducers } from "./Notifications/notificationsReducers";
 import { eventReducers } from "./Events/eventReducers";
 import { authReducers } from "./Auth/authReducers";
 import { runnerReducers } from "./Runners/runnerReducers";
-import weatherReducers from "./Weather/weatherReducers";
-import runGroupReducers from "./RunGroup/rungroupReducers";
+import { runGroupReducers } from "./RunGroup/rungroupReducers";
+import { weatherReducers } from "./Weather/weatherReducers";
 
 const rootReducer = combineReducers({
-  event:eventReducers,
-  auth:authReducers,
-  weather:weatherReducers,
-  runner:runnerReducers,
+  event: eventReducers,
+  auth: authReducers,
+  weather: weatherReducers,
+  runner: runnerReducers,
   notification: notiReducers,
   runGroup: runGroupReducers,
 });

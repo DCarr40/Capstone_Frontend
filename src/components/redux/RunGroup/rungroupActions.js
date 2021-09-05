@@ -22,12 +22,13 @@ export const addEventToRunGroupAction =
     });
   };
 
-export const addToRunGroupAction = (runGroupId) => async (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.ADD_RUNNER_TO_RUNGROUP,
-    payload: { runGroup: runGroupId },
-  });
-};
+export const addToRunGroupAction =
+  (runGroupId) => async (dispatch, getState) => {
+    dispatch({
+      type: actionTypes.ADD_RUNNER_TO_RUNGROUP,
+      payload: { runGroup: runGroupId },
+    });
+  };
 
 export const deleteRunGroupAction = (runGroupId) => (dispatch, getState) => {
   dispatch({
@@ -36,11 +37,16 @@ export const deleteRunGroupAction = (runGroupId) => (dispatch, getState) => {
   });
 };
 
-export const getAllRunGroupsActions = (runGroupId) => (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.GET_ALL_RUNGROUPS,
-    payload: { runGroup: runGroupId },
-  });
+export const getAllRunGroupsActions = () => async (dispatch) => {
+  try {
+    const { data } = await api.getAllRunGroupsRequest();
+    dispatch({
+      type: actionTypes.GET_ALL_RUNGROUPS,
+      payload: data,
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 export const getRunGroupById = (runGroupId) => (dispatch, getState) => {

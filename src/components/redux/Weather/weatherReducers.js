@@ -1,6 +1,6 @@
 import * as actionTypes from "../Weather/weatherConstants";
 
-const weatherReducers = (weather = [], action) => {
+export const weatherReducers = (weather = [], action) => {
   switch (action.type) {
     case actionTypes.GET_WEATHER_REQUEST:
       return [weather, action.payload];
@@ -9,5 +9,3 @@ const weatherReducers = (weather = [], action) => {
       return weatherReducers;
   }
 };
-
-export default weatherReducers;
