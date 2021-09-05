@@ -22,7 +22,8 @@ const App = () => {
           <Route path="/homepage" component={Homepage}/>
           <Route path="/forecast" component={Forecast}/>
           <Route path="/event/:id" component={EventDetails} />
-          <Route path="/create" component={CreateEvent} />
+          <Route path="/createEvent" component={CreateEvent} />
+          <Route path="/createGroup" component={CreateEvent} />
           <Route path="/allevents" component={EventList2} />
 
         </Switch>

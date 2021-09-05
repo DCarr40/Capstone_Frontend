@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
-import { runnerReducers } from "../../Redux/Runners/runnerReducers";
-import EventList from "../Events/eventList";
+import AllEvents from "../Events/allEvents";
 import "./homepage.css";
+
 const Homepage = () => {
   const runnerData = useSelector((state) => state.runnerReducers);
   console.log(runnerData);
@@ -11,37 +11,30 @@ const Homepage = () => {
 
   useEffect(() => (document.title = "Home Page - Runner's Inertia"), []);
 
-  const goToForecastPage = () => {
-    history.push("/forecast");
-  };
+  const goToForecastPage = () => history.push("/forecast");
 
-  const goToCreateEventPage = () => {
-    history.push("/create");
-  };
+  const goToCreateEventPage = () => history.push("/createEvent");
 
-  const letsLogOut = () => {
-    history.push("/");
-  };
+  const goToCreateRunGroupPage = () => history.push("/createGroup");
 
-  const goToAllEventsPage = () => {
-    history.push("/allevents");
-  };
+  const letsLogOut = () => history.push("/");
+
+  const goToAllEventsPage = () => history.push("/allevents");
 
   return (
     <div>
-      <li>
-        <NavLink
-          to="/homepage"
-          className="btn btn-floating black lighten-1 waves-effect waves-light"
-        >
-          DC
-        </NavLink>
-      </li>
+      <br></br>
       <button className="mybutton whit-text" onClick={goToForecastPage}>
         <i className="fas fa-sun">Checkout The Forecast</i>
       </button>
       <br></br>
+      <br></br>
 
+      <div>
+        <button className="mybutton whit-text" onClick={goToCreateRunGroupPage}>
+          <i className="fas fa-hiking"> Create Run Group</i>
+        </button>
+      </div>
       <br></br>
       <div>
         <button className="mybutton whit-text" onClick={goToCreateEventPage}>
@@ -49,10 +42,11 @@ const Homepage = () => {
         </button>
       </div>
       <br></br>
+
       <div>
         <button className="mybutton whit-text" onClick={goToAllEventsPage}>
           {" "}
-          <i className="fas fa-running"> View Events</i>
+          <i className="fas fa-running"> View My Events</i>
         </button>
       </div>
       <br></br>
@@ -64,7 +58,7 @@ const Homepage = () => {
       </div>
       <div className="container">
         <div class="col s6">
-          <EventList />
+          <AllEvents />
         </div>
       </div>
     </div>

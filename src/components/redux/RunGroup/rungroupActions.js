@@ -1,28 +1,35 @@
 import * as actionTypes from "./rungroupConstants";
+import * as api from "../../../api/rungroupApiCalls";
 
-export const createRunGroup = (runGroupId) => async (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.ADD_TO_RUNGROUP,
-    payload: { runGroup: runGroupId },
-  });
+export const createRunGroupAction = (runGroup) => async (dispatch) => {
+  try {
+    const { data } = await api.createRunGroup(runGroup);
+    console.log(data);
+    dispatch({
+      type: actionTypes.CREATE_RUNGROUP,
+      payload: { runGroup: runGroupId },
+    });
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
-export const addEventToRunGroup = (runGroupId) => async (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.ADD_EVENT_TO_RUNGROUP,
-    payload: { runGroup: runGroupId },
-  });
-};
+export const addEventToRunGroupAction =
+  (runGroupId) => async (dispatch, getState) => {
+    dispatch({
+      type: actionTypes.ADD_EVENT_TO_RUNGROUP,
+      payload: { runGroup: runGroupId },
+    });
+  };
 
-export const addToRunGroup = (runGroupId) => async (dispatch, getState) => {
+export const addToRunGroupAction = (runGroupId) => async (dispatch, getState) => {
   dispatch({
     type: actionTypes.ADD_RUNNER_TO_RUNGROUP,
     payload: { runGroup: runGroupId },
   });
 };
 
-
-export const deleteRunGroup = (runGroupId) => (dispatch, getState) => {
+export const deleteRunGroupAction = (runGroupId) => (dispatch, getState) => {
   dispatch({
     type: actionTypes.DELETE_RUNGROUP,
     payload: { runGroup: runGroupId },
