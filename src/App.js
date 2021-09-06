@@ -6,9 +6,8 @@ import { RegisterForm } from "./components/Forms/registerForm";
 import Homepage from "./components/Pages/Homepage/homepage";
 import Forecast from "./components/Pages/Forecast/forecast";
 import Loginpage from "./components/Pages/Login/loginPage";
-import EventList2 from "./components/Pages/Events/allEvents";
-import { CreateRunGroupForm } from "./components/Forms/createRunGroupForm";
 import CreateRunGroup from "./components/Pages/RunGroup/createRunGroup";
+import Map from "./components/Map/map";
 
 const App = () => {
   return (
@@ -22,7 +21,7 @@ const App = () => {
           <Route path="/forecast" exact component={Forecast} />
           <Route path="/createEvent" exact component={CreateEvent} />
           <Route path="/createGroup" exact component={CreateRunGroup} />
-          <Route path="/allevents" exact component={EventList2} />
+          <Route path="/map" exact component={Map} />
         </Switch>
       </main>
     </Router>

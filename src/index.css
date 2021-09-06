@@ -51,6 +51,14 @@ textarea.materialize-textarea:focus:not([readonly]) {
   background-image: linear-gradient(to right, rgb(240, 18, 18), rgb(141, 4, 4));
 }
 
+.fadeaway2 {
+  background-image: linear-gradient(
+    to right,
+    rgba(7, 7, 7, 0.961),
+    rgb(141, 4, 4)
+  );
+}
+
 #rcorners {
   border-radius: 100px;
 }
