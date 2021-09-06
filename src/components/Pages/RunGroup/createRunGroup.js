@@ -5,10 +5,10 @@ import Time from "../../Time/time";
 //form to create groups
 const CreateRunGroup = (props) => {
   useEffect(() => (document.title = "Create Groups - Runner's Inertia"), []);
+  
   const history = useHistory("");
-  const letsGoBack = () => {
-    history.push("/homepage");
-  };
+
+  const letsGoBack = () =>  history.push("/homepage");
 
   return (
     <div>
