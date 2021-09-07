@@ -14,7 +14,7 @@ export const CreateRunGroupForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createRunGroupAction(groupData));
-    history.push("/homepage");
+    window.location.assign("/homepage")
   };
 
   return (

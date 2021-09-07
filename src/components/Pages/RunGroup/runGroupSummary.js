@@ -14,6 +14,7 @@ const GroupSummary = ({ group }) => {
     groupType: "",
     events: 0,
     runners: 0,
+    runnerName: ''
   });
 
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);

@@ -11,10 +11,9 @@ export const storeWeatherAction = () => async (dispatch) => {
         .get(
           `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=632062b391f82bc75255755dbb7eb685`
         );
-      console.log(data.daily);
-      let dailyWeatherInfo = localStorage.setItem("weather", data.daily);
 
-      dispatch({ type: actionTypes.GET_WEATHER_REQUEST, loading: true, payload: dailyWeatherInfo});
+
+      dispatch({ type: actionTypes.GET_WEATHER_REQUEST, loading: true, payload: data.daily});
     });
   } catch (error) {
     console.error(error.message);

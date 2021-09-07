@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { storeWeatherAction } from "../../Redux/Weather/weatherActions";
 import Time from "../../Time/time";
+import ForecastSummary from "./forecastSummary";
 
 const Forecast = () => {
   const dispatch = useDispatch();
   const history = useHistory("");
+  const [data, setData] = useState([]);
+  const weather = useSelector((state) => state.weather[1]);
   const [dailyInfo, setDailyInfo] = useState({
     day1: "",
     day2: "",
@@ -21,36 +24,44 @@ const Forecast = () => {
 
   useEffect(() => dispatch(storeWeatherAction()), []);
 
-  //   useEffect(() => {
-  //       setDay1()
-  //       return () => {
-  //           cleanup
-  //       }
-  //   }, [input])
-
-  //   useEffect(() => {
-  // let renderWeather = localStorage.getItem("dailyWeatherInfo");
-  //     let weatherArray = renderWeather.map((weather) => {
-  //       return (
-
-  //       );
-  //     });
-  //     return () => weatherArray;
-  //   }, []);
-  // }
-
   const letsGoBack = () => {
     history.push("/homepage");
   };
+
+  useEffect(() => {
+    dispatch(storeWeatherAction());
+
+    if (!weather) {
+      setData([<p>...Loading</p>]);
+    } else {
+      setData(
+        weather.map((weather) => (
+          <ForecastSummary
+            weather={weather}
+            key={weather.id}
+            temperature={weather.temperature}
+          />
+        ))
+      );
+    }
+  }, [!weather]);
+
   return (
     <div>
       <div className="container white-text">
         <div className="current__info">
-          <div className="time__container">
-            <Time />
-          </div>
+          <Time />
           <div className="current__weather" id="current__weather">
             <div>
+              <ForecastSummary />
+            </div>
+            <div>
+              <p>
+                Weather is seen in Redux but I am unsure how to grab an array of
+                an array. would it be written as weather[1][1] or weather[1].[1]
+                or weather[1[1]]. I tried all those and none of those methods
+                seem to work.
+              </p>
               <p>Humidity</p>
               <p>95.2%</p>
             </div>

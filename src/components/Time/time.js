@@ -28,7 +28,7 @@ const Time = (props) => {
 
   return (
     <div>
-      <div className="row">
+
         <div className="col s12 m6">
           <div className="card grey darken-3 ">
             <div className="card-content white-text">
@@ -37,7 +37,6 @@ const Time = (props) => {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 };

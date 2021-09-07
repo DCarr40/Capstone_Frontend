@@ -38,3 +38,4 @@ export const getAllEventsAction = () => async (dispatch) => {
     console.error(error.message);
   }
 };
+

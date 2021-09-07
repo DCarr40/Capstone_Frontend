@@ -2,6 +2,7 @@ import * as actionTypes from "./rungroupConstants";
 
 export const INITIAL_STATE = {
   groups: [],
+  filters: "",
 };
 
 export const runGroupReducers = (state = INITIAL_STATE, action) => {
