@@ -14,12 +14,23 @@ const GroupSummary = ({ group }) => {
     groupType: "",
     events: 0,
     runners: 0,
-    runnerName: ''
+    runnerName: "",
   });
 
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
-  const viewGroupPage = () => history.push("/groupPage");
+  const viewGroupPage = () => {
+    let groupEventTitleArray = [];
+    groupEventTitleArray.push(JSON.parse(localStorage.getItem("session")));
+    localStorage.setItem("session", JSON.stringify(groupEventTitleArray));
+    localStorage.setItem("groupName", group.name);
+    localStorage.setItem("groupType", group.groupType);
+    localStorage.setItem("groupRunners", group.runners);
+    group.events.map((events) => groupEventTitleArray.push(events.title));
+
+    localStorage.setItem("groupCreatedAt", group.createdAt);
+    history.push("/groupPage");
+  };
 
   return (
     <div className="container">
@@ -27,8 +38,14 @@ const GroupSummary = ({ group }) => {
         <div className="card-content ">
           <span className="card-title ">{group.name}</span>
           <p>Group Type -{group.groupType}</p>
-          <p className="black-text "> # of Runners {group.runners.length}</p>
-          <p className="black-text "> # of Events {group.events.length}</p>
+          <p className="black-text ">
+            {" "}
+            Runners: {group.runners.map((runners) => runners.username + ", ")}
+          </p>
+          <p className="black-text ">
+            {" "}
+            Events: {group.events.map((events) => events.title + ", ")}
+          </p>
           <p className="black-text ">Created at {group.createdAt}</p>
           <p>
             <button onClick={viewGroupPage}>View Group</button>
