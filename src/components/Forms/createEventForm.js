@@ -19,7 +19,7 @@ export const CreateEventForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createEventAction(eventData));
-    history.push("/homepage");
+    window.location.assign("homepage");
   };
 
   return (

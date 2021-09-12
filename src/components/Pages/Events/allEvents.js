@@ -33,10 +33,9 @@ const AllEvents = () => {
 
   const handleChange = (e) => {
     e.preventDefault(); // prevents whole page from reloading on event change
-    setFilters( e.target.value ); // sets filters value to target event value
+    setFilters(e.target.value); // sets filters value to target event value
     console.log(filters);
   };
-
 
   return (
     <div className="event-list section">
