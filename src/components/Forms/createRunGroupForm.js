@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { createRunGroupAction } from "../Redux/RunGroup/rungroupActions";
 import "./style.css";
 
 export const CreateRunGroupForm = () => {
-  const history = useHistory("/");
   const dispatch = useDispatch();
   const [groupData, setGroupData] = useState({ name: "", groupType: "" });
 
@@ -14,7 +12,7 @@ export const CreateRunGroupForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createRunGroupAction(groupData));
-    window.location.assign("/homepage")
+    window.location.assign("/homepage");
   };
 
   return (
