@@ -8,6 +8,7 @@ import Forecast from "./components/Pages/Forecast/forecast";
 import Loginpage from "./components/Pages/Login/loginPage";
 import CreateRunGroup from "./components/Pages/RunGroup/createRunGroup";
 import Map from "./components/Map/map";
+import { GroupPage } from "./components/Pages/RunGroup/groupPage";
 
 const App = () => {
   return (
@@ -22,6 +23,8 @@ const App = () => {
           <Route path="/createEvent" exact component={CreateEvent} />
           <Route path="/createGroup" exact component={CreateRunGroup} />
           <Route path="/map" exact component={Map} />
+          <Route path="/groupPage" exact component={GroupPage} />
+
         </Switch>
       </main>
     </Router>

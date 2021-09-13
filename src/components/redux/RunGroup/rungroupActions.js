@@ -22,11 +22,14 @@ export const addEventToRunGroupAction =
     });
   };
 
-export const addToRunGroupAction =
-  (runGroupId) => async (dispatch, getState) => {
+export const addRunnerToRunGroupAction =
+  (groupId,newRunner) => async (dispatch) => {
+    const { data } = await api.addRunnerToRunGroupApiRequest(groupId,newRunner);
+    console.log(data);
+
     dispatch({
       type: actionTypes.ADD_RUNNER_TO_RUNGROUP,
-      payload: { runGroup: runGroupId },
+      payload:data,
     });
   };
 

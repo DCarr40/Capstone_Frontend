@@ -7,7 +7,7 @@ export const loginAction = (e) => async (dispatch) => {
         
     const { data } = await api.loginApiCall(e);
     console.log(data);
-    const userInfo = localStorage.setItem("userInfo", JSON.stringify(data));
+    localStorage.setItem("userInfo", data);
     window.location.assign("/homepage");
     alert("Prepare to Have your mind blown");
   } catch (error) {

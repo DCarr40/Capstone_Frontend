@@ -26,9 +26,9 @@ const AllRunGroups = () => {
             key={groups.id}
             name={groups.name}
             groupType={groups.groupType}
-            runners={groups.runners.length}
+            // // runners={groups.runners.length}
             // runnerName = {groups.runner[0].username}
-            events={groups.events.length}
+            // events={groups.events.length}
           />
         ))
       );

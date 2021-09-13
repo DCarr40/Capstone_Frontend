@@ -20,15 +20,8 @@ const GroupSummary = ({ group }) => {
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
   const viewGroupPage = () => {
-    let groupEventTitleArray = [];
-    groupEventTitleArray.push(JSON.parse(localStorage.getItem("session")));
-    localStorage.setItem("session", JSON.stringify(groupEventTitleArray));
-    localStorage.setItem("groupName", group.name);
-    localStorage.setItem("groupType", group.groupType);
-    localStorage.setItem("groupRunners", group.runners);
-    group.events.map((events) => groupEventTitleArray.push(events.title));
-
-    localStorage.setItem("groupCreatedAt", group.createdAt);
+ 
+    localStorage.setItem("groupId", group._id);
     history.push("/groupPage");
   };
 
