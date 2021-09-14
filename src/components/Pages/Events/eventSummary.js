@@ -19,9 +19,10 @@ const EventSummary = ({ event }) => {
 
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
-  const addEventToRunner = (e) => {
-    e.preventDefault();
-    
+  const viewEventPage = () => {
+ 
+    localStorage.setItem("eventId", event._id);
+    history.push("/eventPage");
   };
 
   return (
@@ -31,10 +32,11 @@ const EventSummary = ({ event }) => {
           <span className="card-title ">{event.title}</span>
           <p>Posted by -{event.creator}</p>
           <p>Event Details -{event.details}</p>
+          <p>Event Runners -{event.runners.map(runners => runners.username)}</p>
           <p>Tags -{event.tags}</p>
           <p className="black-text ">Created at {event.createdAt}</p>
           <p>
-            <button onClick={addEventToRunner}>Add to My Events</button>
+            <button onClick={viewEventPage}>View Event</button>
           </p>
         </div>
       </div>

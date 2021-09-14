@@ -24,7 +24,7 @@ export const SecondNav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className="fas fa-running" to="/eventPage">
+          <NavLink className="fas fa-running" to="/myEventsPage">
             {" "}
             View My Events
           </NavLink>

@@ -1,39 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { addRunnerToRunEventAction } from "../../Redux/Events/eventActions";
 
-export const GroupPage = ({ group }) => {
+export const EventPage = ({ group }) => {
   const dispatch = useDispatch();
   const history = useHistory("/eventPage");
-  const eventsDataArray = useSelector((state) => state.eventReducers);
-  const [eventData, setEventData] = useState({
-    name: "",
-    groupType: "",
-    events: [],
-    runners: [],
-  });
+  const groupsDataArray = useSelector((state) => state.runGroupReducers);
+  const eventId = localStorage.getItem("eventId");
+  const newRunner = localStorage.getItem("userInfo");
 
-  const letsGoBack = () => {
-    history.push("/homepage");
-  };
+const joinEventOnClick = () => {
+  dispatch(addRunnerToRunEventAction(eventId,newRunner));
+}
+ 
+const letsGoBack = () => {
+  history.push("/homepage");
+};
 
-  return (
-    <div className="container">
-      <div>
+  return(
+    <div>
+    <h2>Event Page</h2>
+    <button type="button" onClick={joinEventOnClick}> Join Event </button>
+    <button type="button" class> Event Group </button>
+    <br></br>
+    <div>
         <button className="btn" onClick={letsGoBack}>
           <i class="fas fa-arrow-left"> Go Back</i>
         </button>
       </div>
-      <div className="card z-depth-1 event-summary rcorners fadeaway hoverable">
-        <div className="card-content ">
-          <span className="card-title ">{event.title}</span>
-          <p>Posted by -{event.creator}</p>
-          <p className="black-text ">Created at {event.createdAt}</p>
-          <p>
-            <button onClick={viewEvent}>View Event</button>
-          </p>
-        </div>
-      </div>
     </div>
-  );
+  )
+ 
 };

@@ -22,8 +22,7 @@ export const addEventToRunGroupAction =
     });
   };
 
-export const addRunnerToRunGroupAction =
-  (groupId,newRunner) => async (dispatch) => {
+export const addRunnerToRunGroupAction = (groupId,newRunner) => async (dispatch) => {
     const { data } = await api.addRunnerToRunGroupApiRequest(groupId,newRunner);
     console.log(data);
 

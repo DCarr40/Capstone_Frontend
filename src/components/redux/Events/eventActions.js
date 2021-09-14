@@ -39,3 +39,12 @@ export const getAllEventsAction = () => async (dispatch) => {
   }
 };
 
+export const addRunnerToRunEventAction = (eventId,newRunner) => async (dispatch) => {
+    const { data } = await api.addRunnerToEventApiRequest(eventId,newRunner);
+    console.log(data);
+
+    dispatch({
+      type: actionTypes.ADD_RUNNER_TO_EVENT,
+      payload:data,
+    });
+  };
