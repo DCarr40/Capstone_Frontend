@@ -6,21 +6,11 @@ import "./styles.css";
 //It is a brief summary of the creation of the run group
 //It will be placed in the run group list with multiple run groups
 const GroupSummary = ({ group }) => {
-  const dispatch = useDispatch();
   const history = useHistory("/groupPage");
-  const groupsDataArray = useSelector((state) => state.runGroupReducers);
-  const [groupData, setGroupData] = useState({
-    name: "",
-    groupType: "",
-    events: 0,
-    runners: 0,
-    runnerName: "",
-  });
 
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
   const viewGroupPage = () => {
- 
     localStorage.setItem("groupId", group._id);
     history.push("/groupPage");
   };

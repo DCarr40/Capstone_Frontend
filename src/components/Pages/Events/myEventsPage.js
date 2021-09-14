@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addRunnerToRunEventAction, getAllEventsAction } from "../../Redux/Events/eventActions";
+import { getAllEventsAction } from "../../Redux/Events/eventActions";
 import SearchBar from "../../SearchBar/searchBar";
 import EventSummary from "./eventSummary";
 
@@ -18,6 +18,7 @@ export const MyEventsPage = ({ group }) => {
   
       if (!events) {
         setData([<p>...Loading</p>]);
+        
       } else {
         setData(
           events.map((events) => (

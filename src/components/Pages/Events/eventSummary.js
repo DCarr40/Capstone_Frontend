@@ -7,21 +7,12 @@ import "./styles.css";
 //It is a brief summary of the creation of the event
 //It will be placed in the event list with multiple events
 const EventSummary = ({ event }) => {
-  const dispatch = useDispatch();
   const history = useHistory("");
-  const eventsDataArray = useSelector((state) => state.eventReducers);
-  const [eventData, setEventData] = useState({
-    title: "",
-    details: "",
-    creator: "",
-    tags: "",
-  });
 
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
   const viewEventPage = () => {
- 
-    localStorage.setItem("eventId", event._id);
+    localStorage.setItem("eventId", event.id);
     history.push("/eventPage");
   };
 
