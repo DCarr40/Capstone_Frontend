@@ -15,6 +15,15 @@ const GroupSummary = ({ group }) => {
     history.push("/groupPage");
   };
 
+  const mapRunners = () =>  {
+  try {
+    return  group.runners.map((runners) => `${runners.username}, `)
+  } catch (error) {
+    return <p>...Loading</p>, window.location.assign("/homepage");
+  }
+
+  }
+
   return (
     <div className="container">
       <div className="card z-depth-1 event-summary rcorners fadeaway hoverable">
@@ -23,7 +32,7 @@ const GroupSummary = ({ group }) => {
           <p>Group Type -{group.groupType}</p>
           <p className="black-text ">
             {" "}
-            Runners: {group.runners.map((runners) => runners.username + ", ")}
+            Runners: {mapRunners()}
           </p>
           <p className="black-text ">
             {" "}

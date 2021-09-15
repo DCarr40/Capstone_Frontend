@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addRunnerToRunEventAction } from "../../Redux/Events/eventActions";
+import { addRunnerToEventAction } from "../../Redux/Events/eventActions";
 
 export const EventPage = ({ event }) => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ export const EventPage = ({ event }) => {
   const newRunner = localStorage.getItem("userInfo");
 
 const joinEventOnClick = () => {
-  dispatch(addRunnerToRunEventAction(eventId,newRunner));
+  dispatch(addRunnerToEventAction(eventId,newRunner));
 }
  
 const letsGoBack = () => {

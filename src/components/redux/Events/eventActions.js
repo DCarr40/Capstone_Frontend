@@ -39,7 +39,7 @@ export const getAllEventsAction = () => async (dispatch) => {
   }
 };
 
-export const addRunnerToRunEventAction = (eventId,newRunner) => async (dispatch) => {
+export const addRunnerToEventAction = (eventId,newRunner) => async (dispatch) => {
     const { data } = await api.addRunnerToEventApiRequest(eventId,newRunner);
     console.log(data);
 

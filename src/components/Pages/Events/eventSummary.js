@@ -12,9 +12,18 @@ const EventSummary = ({ event }) => {
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
   const viewEventPage = () => {
-    localStorage.setItem("eventId", event.id);
+    localStorage.setItem("eventId", event._id);
     history.push("/eventPage");
   };
+
+  const mapRunners = () =>  {
+    try {
+      return  event.runners.map((runners) => `${runners.username}, `)
+    } catch (error) {
+      return <p>...Loading</p>, window.location.assign("/homepage");
+    }
+  
+    }
 
   return (
     <div className="container">
@@ -23,7 +32,7 @@ const EventSummary = ({ event }) => {
           <span className="card-title ">{event.title}</span>
           <p>Posted by -{event.creator}</p>
           <p>Event Details -{event.details}</p>
-          <p>Event Runners -{event.runners.map(runners => runners.username)}</p>
+          <p>Event Runners -{mapRunners()}</p>
           <p>Tags -{event.tags}</p>
           <p className="black-text ">Created at {event.createdAt}</p>
           <p>
