@@ -1,38 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { getAllEventsAction } from "../../Redux/Events/eventActions";
+import { getRunnerAction } from "../../Redux/Runners/runnerActions";
 import SearchBar from "../../SearchBar/searchBar";
 import EventSummary from "./eventSummary";
 
 export const MyEventsPage = ({ group }) => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const events = useSelector((state) => state.event.events[0]);
+    const userInfo = localStorage.getItem("userInfo");
     const [filters, setFilters] = useState("");
     const [data, setData] = useState([]);
-    let newArrayOfEvents = "[]";
-  
+
     useEffect(() => {
-      dispatch(getAllEventsAction());
+          dispatch(getRunnerAction(userInfo));
   
-      if (!events) {
-        setData([<p>...Loading</p>]);
+    //   if (!events) {
+    //     setData([<p>...Loading</p>]);
         
-      } else {
-        setData(
-          events.map((events) => (
-            <EventSummary
-              event={events}
-              key={events.id}
-              title={events.title}
-              details={events.details}
-              creator={events.creator}
-            />
-          ))
-        );
-      }
-    }, [!events]);
+    //   } else {
+    //     setData(
+    //       events.map((events) => (
+    //         <EventSummary
+    //           event={events}
+    //           key={events.id}
+    //           title={events.title}
+    //           details={events.details}
+    //           creator={events.creator}
+    //         />
+    //       ))
+    //     );
+    //   }
+    }, [/*!events*/]);
   
     const handleChange = (e) => {
       e.preventDefault(); // prevents whole page from reloading on event change

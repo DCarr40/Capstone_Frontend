@@ -1,9 +1,9 @@
 import * as actionTypes from "./eventConstants";
 import * as api from "../../../api/eventApiCalls";
 
-export const getEvent = () => async (dispatch) => {
+export const getEventAction = () => async (dispatch) => {
   try {
-    const { data } = await api.fetchCollection();
+    const { data } = await api.getEventApiRequest();
     console.log(data);
     dispatch({ type: actionTypes.GET_EVENT_REQUEST, payload: data });
   } catch (error) {

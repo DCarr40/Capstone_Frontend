@@ -1,4 +1,4 @@
-import * as actionTypes from "../constants/runnerConstants";
+import * as actionTypes from "./runnerConstants";
 import * as api from "../../../api/runnerApiCalls";
 
 export const storeRunnerAction = () => async (dispatch) => {
@@ -6,6 +6,16 @@ export const storeRunnerAction = () => async (dispatch) => {
     const { data } = await api.getRunnerById2();
     console.log(data);
     dispatch({ type: actionTypes.GET_RUNNERBYID_REQUEST, loading: true, payload: data });
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
+export const getRunnerAction = () => async (dispatch) => {
+  try {
+    const { data } = await api.getRunnerApiRequest();
+    console.log(data);
+    dispatch({ type: actionTypes.GET_RUNNER_REQUEST, payload: data });
   } catch (error) {
     console.error(error.message);
   }

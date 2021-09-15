@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { removeEventAction } from "../../Redux/Events/eventActions";
 import "./styles.css";
 //This is the template of the individual event card
 //It is a brief summary of the creation of the event
@@ -13,6 +11,9 @@ const EventSummary = ({ event }) => {
 
   const viewEventPage = () => {
     localStorage.setItem("eventId", event._id);
+    localStorage.setItem("currentEventTitle", event.title);
+    localStorage.setItem("currentEventDetails", event.details);
+    localStorage.setItem("currentEventRunners", mapRunners());
     history.push("/eventPage");
   };
 
