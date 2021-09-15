@@ -8,30 +8,32 @@ import EventSummary from "./eventSummary";
 export const MyEventsPage = ({ group }) => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const runner = useSelector((state) => state.runner);
     const userInfo = localStorage.getItem("userInfo");
     const [filters, setFilters] = useState("");
     const [data, setData] = useState([]);
 
     useEffect(() => {
           dispatch(getRunnerAction(userInfo));
-  
-    //   if (!events) {
-    //     setData([<p>...Loading</p>]);
+          
         
-    //   } else {
-    //     setData(
-    //       events.map((events) => (
-    //         <EventSummary
-    //           event={events}
-    //           key={events.id}
-    //           title={events.title}
-    //           details={events.details}
-    //           creator={events.creator}
-    //         />
-    //       ))
-    //     );
-    //   }
-    }, [/*!events*/]);
+      if (!data) {
+        setData([<p>...Loading</p>]);
+        
+      } else {
+        setData(
+          runner.map((events) => (
+            <EventSummary
+              event={events}
+              key={events.id}
+              title={events.title}
+              details={events.details}
+              creator={events.creator}
+            />
+          ))
+        );
+      }
+    }, [!data]);
   
     const handleChange = (e) => {
       e.preventDefault(); // prevents whole page from reloading on event change
