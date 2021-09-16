@@ -13,11 +13,13 @@ export const GroupPage = ({ group }) => {
 const joinGroupOnClick = () => {
   dispatch(addRunnerToRunGroupAction(groupId,newRunner));
   alert("You have now Joined this Running Group");
+  window.location.assign("/homepage");
 }
 
 const deleteRunGroupOnClick = () => {
   dispatch(deleteRunGroupAction(groupId));
   alert("You have now deleted this Run Group");
+  window.location.assign("/homepage");
 }
  
 const letsGoBack = () => {
@@ -37,9 +39,9 @@ const letsGoBack = () => {
 
       </div>
     </div>
-    <button type="button" onClick={joinGroupOnClick}> Join Event </button>
-    <button type="button" class> Leave Event </button>
-    <button type="button" onClick={deleteRunGroupOnClick} >Delete Event </button>
+    <button type="button" onClick={joinGroupOnClick}> Join Group </button>
+    <button type="button" class> Leave Group </button>
+    <button type="button" onClick={deleteRunGroupOnClick} >Delete Group</button>
     <br></br>
     <div>
         <button className="btn" onClick={letsGoBack}>

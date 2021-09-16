@@ -10,19 +10,9 @@ const Forecast = () => {
   const history = useHistory("");
   const [data, setData] = useState([]);
   const weather = useSelector((state) => state.weather[1]);
-  const [dailyInfo, setDailyInfo] = useState({
-    day1: "",
-    day2: "",
-    day3: "",
-    day4: "",
-    day5: "",
-    day6: "",
-    day7: "",
-    day8: "",
-  });
-  useEffect(() => (document.title = "Forecast - Runner's Inertia"), []);
 
-  useEffect(() => dispatch(storeWeatherAction()), []);
+  useEffect(() => (document.title = "Forecast - Runner's Inertia"), []);
+  useEffect(() => (dispatch(storeWeatherAction())),[])
 
   const letsGoBack = () => {
     history.push("/homepage");
@@ -57,10 +47,6 @@ const Forecast = () => {
             </div>
             <div>
               <p>
-                Weather is seen in Redux but I am unsure how to grab an array of
-                an array. would it be written as weather[1][1] or weather[1].[1]
-                or weather[1[1]]. I tried all those and none of those methods
-                seem to work.
               </p>
               <p>Humidity</p>
               <p>95.2%</p>
