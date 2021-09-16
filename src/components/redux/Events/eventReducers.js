@@ -22,6 +22,9 @@ export const eventReducers = (state = INITIAL_STATE, action) => {
     case actionTypes.DELETE_EVENT_REQUEST:
       return { ...state, events: [action.payload] };
     /* <===========================================>*/
+    case actionTypes.UPDATE_EVENT_REQUEST:
+      return { ...state, events: [action.payload] };
+    /* <===========================================>*/
     default:
       return state;
   }

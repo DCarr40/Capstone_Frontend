@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addRunnerToEventAction, deleteEventAction, getAllEventsAction, getEventAction } from "../../Redux/Events/eventActions";
+import { addRunnerToEventAction, deleteEventAction, getAllEventsAction, getEventAction, updateEventAction } from "../../Redux/Events/eventActions";
 
 export const EventPage = ({ event }) => {
   const dispatch = useDispatch();
@@ -16,6 +16,10 @@ export const EventPage = ({ event }) => {
 
   }
 
+  const updateEventOnClick = () => {
+   history.push("/updateEvent");
+  }
+  
   const deleteEventOnClick = () => {
     dispatch(deleteEventAction(eventId));
     alert('You have now deleted this event.');
@@ -37,7 +41,7 @@ return (
       </div>
     </div>
     <button type="button" onClick={joinEventOnClick}> Join Event </button>
-    <button type="button" /*onClick={updateEventOnClick}*/  > Update Event </button>
+    <button type="button" onClick={updateEventOnClick}  > Update Event </button>
     <button type="button" onClick={deleteEventOnClick}>Delete Event </button>
     <br></br>
     <div>
