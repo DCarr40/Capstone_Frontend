@@ -4,12 +4,11 @@ import { useHistory } from "react-router-dom";
 
 export const loginAction = (e) => async (dispatch) => {
   try {
-        
     const { data } = await api.loginApiCall(e);
     console.log(data);
     localStorage.setItem("userInfo", data);
     window.location.assign("/homepage");
-    alert("Prepare to Have your mind blown");
+    console.log("Prepare to Have your mind blown");
   } catch (error) {
     alert("Email or Password is Incorrect. Please Try Again");
   }
