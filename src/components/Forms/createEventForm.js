@@ -64,7 +64,6 @@ export const CreateEventForm = () => {
           <textarea
             type="text"
             id="details"
-            className="materialize-textarea"
             value={eventData.details}
             onChange={(e) =>
               setEventData({ ...eventData, details: e.target.value })
