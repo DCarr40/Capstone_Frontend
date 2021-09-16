@@ -11,14 +11,18 @@ export const EventPage = ({ event }) => {
 
   const joinEventOnClick = () => {
     dispatch(addRunnerToEventAction(eventId,newRunner));
+    alert("You have now been added to this event");
+    window.location.assign("/eventPage");
+
   }
 
   const deleteEventOnClick = () => {
     dispatch(deleteEventAction(eventId));
+    alert('You have now deleted this event.');
   }
 
   const letsGoBack = () => {
-  history.push("/homepage");
+    window.location.assign("/homepage");
   };
 
 return (

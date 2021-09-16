@@ -3,21 +3,30 @@ import EventSummary from "./eventSummary";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllEventsAction } from "../../Redux/Events/eventActions";
 import SearchBar from "../../SearchBar/searchBar";
+import { useHistory } from "react-router";
 
 const AllEvents = () => {
   const dispatch = useDispatch();
   const events = useSelector((state) => state.event.events[0]);
   const [filters, setFilters] = useState("");
   const [data, setData] = useState([]);
-  let newArrayOfEvents = "[]";
+  const history = useState();
+  const [myFlag, setMyFlag] = useState(false);
+
+
 
   useEffect(() => {
     dispatch(getAllEventsAction());
+    dispatch(getAllEventsAction());
+ 
 
     if (!events) {
       setData([<p>...Loading</p>]);
     } else {
+     
       setData(
+ 
+
         events.map((events) => (
           <EventSummary
             event={events}

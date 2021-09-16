@@ -10,6 +10,7 @@ const EventSummary = ({ event }) => {
   useEffect(() => (document.title = "Create Event - Runner's Inertia"), []);
 
   const viewEventPage = () => {
+   
     localStorage.setItem("eventId", event._id);
     localStorage.setItem("currentEventTitle", event.title);
     localStorage.setItem("currentEventDetails", event.details);

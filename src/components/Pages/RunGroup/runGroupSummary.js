@@ -12,6 +12,9 @@ const GroupSummary = ({ group }) => {
 
   const viewGroupPage = () => {
     localStorage.setItem("groupId", group._id);
+    localStorage.setItem("currentGroupName", group.title);
+    localStorage.setItem("currentGroupType", group.groupType);
+    localStorage.setItem("currentGroupRunners", mapRunners());
     history.push("/groupPage");
   };
 
@@ -23,6 +26,14 @@ const GroupSummary = ({ group }) => {
   }
 
   }
+
+  const mapEvents = () =>  {
+    try {
+      return  group.events.map((events) => `${events.title}, `)
+    } catch (error) {
+      return <p>...Loading</p>, window.location.assign("/homepage");
+    }
+    }
 
   return (
     <div className="container">
@@ -36,7 +47,7 @@ const GroupSummary = ({ group }) => {
           </p>
           <p className="black-text ">
             {" "}
-            Events: {group.events.map((events) => events.title + ", ")}
+            Events: {mapEvents()}
           </p>
           <p className="black-text ">Created at {group.createdAt}</p>
           <p>
