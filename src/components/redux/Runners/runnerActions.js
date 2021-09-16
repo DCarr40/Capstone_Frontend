@@ -25,11 +25,11 @@ export const removeRunnerFromStorageAction = () => async (dispatch) => {
   }
 };
 
-export const addEventToRunnerAction = () => async (dispatch) => {
+export const addEventToRunnerAction = (eventId, runnerId) => async (dispatch) => {
   try {
-    const { data } = await api.getRunnerById2();
+    const { data } = await api.addEventToRunnerApiRequest(eventId, runnerId);
     console.log(data);
-    dispatch({ type: actionTypes.GET_RUNNERBYID_REQUEST, loading: true, payload: data });
+    dispatch({ type: actionTypes.ADD_EVENT_TO_RUNNER, loading: true, payload: data });
   } catch (error) {
     console.error(error.message);
   }

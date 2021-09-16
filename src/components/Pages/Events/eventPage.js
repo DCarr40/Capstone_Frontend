@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addRunnerToEventAction, deleteEventAction, getAllEventsAction, getEventAction, updateEventAction } from "../../Redux/Events/eventActions";
+import {
+  addRunnerToEventAction,
+  deleteEventAction,
+  getAllEventsAction,
+  getEventAction,
+  updateEventAction,
+} from "../../Redux/Events/eventActions";
+import { addEventToRunnerAction } from "../../Redux/Runners/runnerActions";
 
 export const EventPage = ({ event }) => {
   const dispatch = useDispatch();
@@ -10,47 +17,56 @@ export const EventPage = ({ event }) => {
   const newRunner = localStorage.getItem("userInfo");
 
   const joinEventOnClick = () => {
-    dispatch(addRunnerToEventAction(eventId,newRunner));
+    dispatch(addRunnerToEventAction(eventId, newRunner));
+    dispatch(addEventToRunnerAction(eventId, newRunner));
     alert("You have now been added to this event");
     window.location.assign("/eventPage");
-
-  }
+  };
 
   const updateEventOnClick = () => {
-   history.push("/updateEvent");
-  }
-  
+    history.push("/updateEvent");
+  };
+
   const deleteEventOnClick = () => {
     dispatch(deleteEventAction(eventId));
-    alert('You have now deleted this event.');
-  }
+    alert("You have now deleted this event.");
+  };
 
   const letsGoBack = () => {
     window.location.assign("/homepage");
   };
 
-return (
-  <div className="container">
-    <div>
-    <h2 className="white-text ">Event Page</h2>
-    <div className="card z-depth-1 event-summary rcorners fadeaway hoverable">
-      <div className="card-content ">
-        <span className="card-title ">{localStorage.getItem("currentEventTitle")}</span>
-        <p>Event Details -{localStorage.getItem("currentEventDetails")}</p>
-        <p>Event Runners -{localStorage.getItem("currentEventRunners")}</p>
-      </div>
-    </div>
-    <button type="button" onClick={joinEventOnClick}> Join Event </button>
-    <button type="button" onClick={updateEventOnClick}  > Update Event </button>
-    <button type="button" onClick={deleteEventOnClick}>Delete Event </button>
-    <br></br>
-    <div>
-        <button className="btn" onClick={letsGoBack}>
-          <i className="fas fa-arrow-left"> Go Back</i>
+  return (
+    <div className="container">
+      <div>
+        <h2 className="white-text ">Event Page</h2>
+        <div className="card z-depth-1 event-summary rcorners fadeaway hoverable">
+          <div className="card-content ">
+            <span className="card-title ">
+              {localStorage.getItem("currentEventTitle")}
+            </span>
+            <p>Event Details -{localStorage.getItem("currentEventDetails")}</p>
+            <p>Event Runners -{localStorage.getItem("currentEventRunners")}</p>
+          </div>
+        </div>
+        <button type="button" onClick={joinEventOnClick}>
+          {" "}
+          Join Event{" "}
         </button>
+        <button type="button" onClick={updateEventOnClick}>
+          {" "}
+          Update Event{" "}
+        </button>
+        <button type="button" onClick={deleteEventOnClick}>
+          Delete Event{" "}
+        </button>
+        <br></br>
+        <div>
+          <button className="btn" onClick={letsGoBack}>
+            <i className="fas fa-arrow-left"> Go Back</i>
+          </button>
+        </div>
       </div>
     </div>
-    </div>
-  )
- 
+  );
 };
