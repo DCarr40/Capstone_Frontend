@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addRunnerToEventAction, getAllEventsAction, getEventAction } from "../../Redux/Events/eventActions";
+import { addRunnerToEventAction, deleteEventAction, getAllEventsAction, getEventAction } from "../../Redux/Events/eventActions";
 
 export const EventPage = ({ event }) => {
   const dispatch = useDispatch();
@@ -10,9 +10,13 @@ export const EventPage = ({ event }) => {
   const newRunner = localStorage.getItem("userInfo");
 
   const joinEventOnClick = () => {
-  dispatch(addRunnerToEventAction(eventId,newRunner));
+    dispatch(addRunnerToEventAction(eventId,newRunner));
   }
- 
+
+  const deleteEventOnClick = () => {
+    dispatch(deleteEventAction(eventId));
+  }
+
   const letsGoBack = () => {
   history.push("/homepage");
   };
@@ -30,6 +34,7 @@ return (
     </div>
     <button type="button" onClick={joinEventOnClick}> Join Event </button>
     <button type="button" class> Leave Event </button>
+    <button type="button" onClick={deleteEventOnClick}>Delete Event </button>
     <br></br>
     <div>
         <button className="btn" onClick={letsGoBack}>

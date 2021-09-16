@@ -9,20 +9,23 @@ export const MyEventsPage = ({ group }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const runner = useSelector((state) => state.runner);
-    const userInfo = localStorage.getItem("userInfo");
     const [filters, setFilters] = useState("");
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-          dispatch(getRunnerAction(userInfo));
+    // 
+  useEffect(async () => {
+      const  userInfo = await localStorage.getItem("userInfo");
+      console.log(userInfo);
+      dispatch(getRunnerAction(userInfo));
           
         
       if (!data) {
         setData([<p>...Loading</p>]);
         
-      } else {
+      } 
+      else {
         setData(
-          runner.map((events) => (
+          runner.events.map((events) => (
             <EventSummary
               event={events}
               key={events.id}
@@ -34,7 +37,6 @@ export const MyEventsPage = ({ group }) => {
         );
       }
     }, [!data]);
-  
     const handleChange = (e) => {
       e.preventDefault(); // prevents whole page from reloading on event change
       setFilters(e.target.value); // sets filters value to target event value

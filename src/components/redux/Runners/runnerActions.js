@@ -3,9 +3,9 @@ import * as api from "../../../api/runnerApiCalls";
 
 
 
-export const getRunnerAction = () => async (dispatch) => {
+export const getRunnerAction = (event) => async (dispatch) => {
   try {
-    const { data } = await api.getRunnerApiRequest();
+    const { data } = await api.getRunnerApiRequest(event);
     console.log(data);
     dispatch({ type: actionTypes.GET_RUNNER_REQUEST, payload: data });
   } catch (error) {

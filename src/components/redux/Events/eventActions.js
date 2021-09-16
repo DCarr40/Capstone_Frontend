@@ -21,10 +21,11 @@ export const createEventAction = (event) => async (dispatch) => {
   }
 };
 
-export const removeEventAction = (event) => async (dispatch) => {
+export const deleteEventAction = (event) => async (dispatch) => {
   try {
-    const data = localStorage.removeItem("event");
-    dispatch({ type: actionTypes.REMOVE_EVENT_REQUEST, payload: data });
+    const { data } = await api.deleteEventApiRequest(event);
+    console.log(data);
+    dispatch({ type: actionTypes.DELETE_EVENT_REQUEST, payload: data });
   } catch (error) {
     console.error(error.message);
   }
