@@ -37,12 +37,12 @@ return (
       </div>
     </div>
     <button type="button" onClick={joinEventOnClick}> Join Event </button>
-    <button type="button" class> Leave Event </button>
+    <button type="button" /*onClick={updateEventOnClick}*/  > Update Event </button>
     <button type="button" onClick={deleteEventOnClick}>Delete Event </button>
     <br></br>
     <div>
         <button className="btn" onClick={letsGoBack}>
-          <i class="fas fa-arrow-left"> Go Back</i>
+          <i className="fas fa-arrow-left"> Go Back</i>
         </button>
       </div>
     </div>

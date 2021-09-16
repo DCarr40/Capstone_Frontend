@@ -49,3 +49,13 @@ export const addRunnerToEventAction = (eventId,newRunner) => async (dispatch) =>
       payload:data,
     });
   };
+
+  export const updateEventAction = (event) => async (dispatch) => {
+    try {
+      const { data } = await api.updateEventApiRequest(event);
+      console.log(data);
+      dispatch({ type: actionTypes.UPDATE_EVENT_REQUEST, payload: data });
+    } catch (error) {
+      console.error(error.message);
+    }
+  };

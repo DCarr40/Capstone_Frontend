@@ -15,7 +15,7 @@ export const createRunGroupAction = (runGroup) => async (dispatch) => {
 };
 
 export const addEventToRunGroupAction =
-  (runGroupId) => async (dispatch, getState) => {
+  (runGroupId) => async (dispatch) => {
     dispatch({
       type: actionTypes.ADD_EVENT_TO_RUNGROUP,
       payload: { runGroup: runGroupId },
@@ -32,11 +32,14 @@ export const addRunnerToRunGroupAction = (groupId,newRunner) => async (dispatch)
     });
   };
 
-export const deleteRunGroupAction = (runGroupId) => (dispatch, getState) => {
-  dispatch({
-    type: actionTypes.DELETE_RUNGROUP,
-    payload: { runGroup: runGroupId },
-  });
+export const deleteRunGroupAction =  (runGroupId) => async(dispatch) => {
+  try {
+    const { data } = await api.deleteRunGroupApiRequest(runGroupId);
+    console.log(data);
+    dispatch({ type: actionTypes.DELETE_RUNGROUP_REQUEST, payload: data });
+  } catch (error) {
+    console.error(error.message);
+  }
 };
 
 export const getAllRunGroupsActions = () => async (dispatch) => {

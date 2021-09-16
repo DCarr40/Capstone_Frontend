@@ -13,7 +13,7 @@ export const runGroupReducers = (state = INITIAL_STATE, action) => {
       return { ...state, groups: [action.payload] };
     case actionTypes.ADD_RUNNER_TO_RUNGROUP:
       return { ...state, groups: [action.payload] };
-    case actionTypes.DELETE_RUNGROUP:
+    case actionTypes.DELETE_RUNGROUP_REQUEST:
       return { ...state, groups: [action.payload] };
     case actionTypes.GET_RUNGROUP_BY_ID:
       return { ...state, groups: [action.payload] };

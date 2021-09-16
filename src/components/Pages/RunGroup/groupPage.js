@@ -32,7 +32,7 @@ const letsGoBack = () => {
     </div>
     <button type="button" onClick={joinGroupOnClick}> Join Event </button>
     <button type="button" class> Leave Event </button>
-    {/* <button type="button" onClick={deleteEventOnClick}>Delete Event </button> */}
+    <button type="button" /*onClick={deleteRunGroupOnClick}*/ >Delete Event </button>
     <br></br>
     <div>
         <button className="btn" onClick={letsGoBack}>
