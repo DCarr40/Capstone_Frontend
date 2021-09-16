@@ -10,8 +10,6 @@ const AllEvents = () => {
   const events = useSelector((state) => state.event.events[0]);
   const [filters, setFilters] = useState("");
   const [data, setData] = useState([]);
-  const history = useState();
-  const [myFlag, setMyFlag] = useState(false);
 
 
 

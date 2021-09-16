@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { addRunnerToRunGroupAction } from "../../Redux/RunGroup/rungroupActions";
+import { addRunnerToRunGroupAction, deleteRunGroupAction } from "../../Redux/RunGroup/rungroupActions";
 
 export const GroupPage = ({ group }) => {
   const dispatch = useDispatch();
@@ -14,9 +14,14 @@ const joinGroupOnClick = () => {
   dispatch(addRunnerToRunGroupAction(groupId,newRunner));
   alert("You have now Joined this Running Group");
 }
+
+const deleteRunGroupOnClick = () => {
+  dispatch(deleteRunGroupAction(groupId));
+  alert("You have now deleted this Run Group");
+}
  
 const letsGoBack = () => {
-  history.push("/homepage");
+  window.location.assign("/homepage");
 };
 
   return(
@@ -25,14 +30,16 @@ const letsGoBack = () => {
     <h2 className="white-text ">Group Page</h2>
     <div className="card z-depth-1 event-summary rcorners fadeaway hoverable">
       <div className="card-content ">
-        <span className="card-title ">{localStorage.getItem("currentEventTitle")}</span>
-        <p>Event Details -{localStorage.getItem("currentEventDetails")}</p>
-        <p>Event Runners -{localStorage.getItem("currentEventRunners")}</p>
+        <span className="card-title ">{localStorage.getItem("currentGroupName")}</span>
+        <p>Group Type -{localStorage.getItem("currentGroupType")}</p>
+        <p>Group Runners -{localStorage.getItem("currentGroupRunners")}</p>
+        <p>Group Events -{localStorage.getItem("currentGroupEvents")}</p>
+
       </div>
     </div>
     <button type="button" onClick={joinGroupOnClick}> Join Event </button>
     <button type="button" class> Leave Event </button>
-    <button type="button" /*onClick={deleteRunGroupOnClick}*/ >Delete Event </button>
+    <button type="button" onClick={deleteRunGroupOnClick} >Delete Event </button>
     <br></br>
     <div>
         <button className="btn" onClick={letsGoBack}>

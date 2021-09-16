@@ -15,6 +15,8 @@ const AllRunGroups = () => {
 
   useEffect(() => {
     dispatch(getAllRunGroupsActions());
+    dispatch(getAllRunGroupsActions());
+
     if (!groups) {
       setData([<p>...Loading</p>]);
  

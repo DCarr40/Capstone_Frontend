@@ -12,9 +12,10 @@ const GroupSummary = ({ group }) => {
 
   const viewGroupPage = () => {
     localStorage.setItem("groupId", group._id);
-    localStorage.setItem("currentGroupName", group.title);
+    localStorage.setItem("currentGroupName", group.name);
     localStorage.setItem("currentGroupType", group.groupType);
     localStorage.setItem("currentGroupRunners", mapRunners());
+    localStorage.setItem("currentGroupEvents", mapEvents());
     history.push("/groupPage");
   };
 
